@@ -13,6 +13,10 @@
 		90A8C46C1CAA269C00F17677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C46A1CAA269C00F17677 /* Main.storyboard */; };
 		90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C46D1CAA269C00F17677 /* Assets.xcassets */; };
 		90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C46F1CAA269C00F17677 /* LaunchScreen.storyboard */; };
+		90A8C4871CAA282400F17677 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4861CAA282400F17677 /* LoginStoryboard.storyboard */; };
+		90A8C48A1CAA287C00F17677 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4891CAA287C00F17677 /* LoginViewController.m */; };
+		90A8C48C1CAA58F200F17677 /* OrderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */; };
+		90A8C48F1CAA590900F17677 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C48E1CAA590900F17677 /* OrderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,12 @@
 		90A8C46D1CAA269C00F17677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A8C4701CAA269C00F17677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90A8C4721CAA269C00F17677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A8C4861CAA282400F17677 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		90A8C4881CAA287C00F17677 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		90A8C4891CAA287C00F17677 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderStoryboard.storyboard; sourceTree = "<group>"; };
+		90A8C48D1CAA590900F17677 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		90A8C48E1CAA590900F17677 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +68,12 @@
 		90A8C4601CAA269C00F17677 /* iPad-Food */ = {
 			isa = PBXGroup;
 			children = (
-				90A8C4641CAA269C00F17677 /* AppDelegate.h */,
-				90A8C4651CAA269C00F17677 /* AppDelegate.m */,
-				90A8C4671CAA269C00F17677 /* ViewController.h */,
-				90A8C4681CAA269C00F17677 /* ViewController.m */,
-				90A8C46A1CAA269C00F17677 /* Main.storyboard */,
+				90A8C47C1CAA277700F17677 /* lib */,
+				90A8C47B1CAA276500F17677 /* other(其他) */,
+				90A8C47A1CAA275600F17677 /* order(购物车) */,
+				90A8C4791CAA274200F17677 /* mian(首页) */,
+				90A8C4781CAA273400F17677 /* login(登陆) */,
 				90A8C46D1CAA269C00F17677 /* Assets.xcassets */,
-				90A8C46F1CAA269C00F17677 /* LaunchScreen.storyboard */,
-				90A8C4721CAA269C00F17677 /* Info.plist */,
 				90A8C4611CAA269C00F17677 /* Supporting Files */,
 			);
 			path = "iPad-Food";
@@ -77,6 +85,126 @@
 				90A8C4621CAA269C00F17677 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90A8C4781CAA273400F17677 /* login(登陆) */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4851CAA27E500F17677 /* controller */,
+				90A8C4841CAA27DC00F17677 /* model */,
+				90A8C4831CAA27D600F17677 /* view */,
+			);
+			name = "login(登陆)";
+			sourceTree = "<group>";
+		};
+		90A8C4791CAA274200F17677 /* mian(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4821CAA27BA00F17677 /* controller */,
+				90A8C4811CAA27B400F17677 /* model */,
+				90A8C4801CAA27AE00F17677 /* view */,
+			);
+			name = "mian(首页)";
+			sourceTree = "<group>";
+		};
+		90A8C47A1CAA275600F17677 /* order(购物车) */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C47F1CAA27A500F17677 /* controller */,
+				90A8C47E1CAA279F00F17677 /* model */,
+				90A8C47D1CAA278F00F17677 /* view */,
+			);
+			name = "order(购物车)";
+			sourceTree = "<group>";
+		};
+		90A8C47B1CAA276500F17677 /* other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4641CAA269C00F17677 /* AppDelegate.h */,
+				90A8C4651CAA269C00F17677 /* AppDelegate.m */,
+				90A8C46F1CAA269C00F17677 /* LaunchScreen.storyboard */,
+				90A8C4721CAA269C00F17677 /* Info.plist */,
+			);
+			name = "other(其他)";
+			sourceTree = "<group>";
+		};
+		90A8C47C1CAA277700F17677 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		90A8C47D1CAA278F00F17677 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		90A8C47E1CAA279F00F17677 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		90A8C47F1CAA27A500F17677 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */,
+				90A8C48D1CAA590900F17677 /* OrderViewController.h */,
+				90A8C48E1CAA590900F17677 /* OrderViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		90A8C4801CAA27AE00F17677 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		90A8C4811CAA27B400F17677 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		90A8C4821CAA27BA00F17677 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4671CAA269C00F17677 /* ViewController.h */,
+				90A8C4681CAA269C00F17677 /* ViewController.m */,
+				90A8C46A1CAA269C00F17677 /* Main.storyboard */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		90A8C4831CAA27D600F17677 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		90A8C4841CAA27DC00F17677 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		90A8C4851CAA27E500F17677 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4861CAA282400F17677 /* LoginStoryboard.storyboard */,
+				90A8C4881CAA287C00F17677 /* LoginViewController.h */,
+				90A8C4891CAA287C00F17677 /* LoginViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
+				90A8C48C1CAA58F200F17677 /* OrderStoryboard.storyboard in Resources */,
 				90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */,
 				90A8C46C1CAA269C00F17677 /* Main.storyboard in Resources */,
+				90A8C4871CAA282400F17677 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A8C48A1CAA287C00F17677 /* LoginViewController.m in Sources */,
+				90A8C48F1CAA590900F17677 /* OrderViewController.m in Sources */,
 				90A8C4691CAA269C00F17677 /* ViewController.m in Sources */,
 				90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */,
 				90A8C4631CAA269C00F17677 /* main.m in Sources */,
