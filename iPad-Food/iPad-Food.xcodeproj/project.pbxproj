@@ -432,6 +432,7 @@
 				90A8C4771CAA269C00F17677 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
