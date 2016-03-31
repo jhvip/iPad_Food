@@ -10,7 +10,7 @@
 #define RequestUrl_h
 
 
-#define ip @"127.0.0.1:8080/app_food"
+#define ip @"127.0.0.1:8080/iPad_Server"
 
 
 //菜单URL

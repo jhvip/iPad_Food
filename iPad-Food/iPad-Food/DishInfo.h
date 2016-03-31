@@ -14,7 +14,7 @@
 @property(nonatomic,strong)NSString *dishMoney;
 @property(nonatomic,strong)NSString *dishTitle;
 @property(nonatomic,strong)NSString *dishDetail;
-
-
+@property(nonatomic,strong)NSString *dishNo;
++(NSArray*)dishInfoSet:(NSArray*)dishList;
 
 @end

@@ -26,6 +26,8 @@
 		90A8C4C11CACC93600F17677 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4B81CACC93600F17677 /* AFURLRequestSerialization.m */; };
 		90A8C4C21CACC93600F17677 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4BA1CACC93600F17677 /* AFURLResponseSerialization.m */; };
 		90A8C4C31CACC93600F17677 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4BC1CACC93600F17677 /* AFURLSessionManager.m */; };
+		90A8C4C81CAD163700F17677 /* DishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4C61CAD163700F17677 /* DishDetailViewController.m */; };
+		90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4C71CAD163700F17677 /* DishDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		90A8C4BA1CACC93600F17677 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		90A8C4BB1CACC93600F17677 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		90A8C4BC1CACC93600F17677 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		90A8C4C51CAD163700F17677 /* DishDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishDetailViewController.h; sourceTree = "<group>"; };
+		90A8C4C61CAD163700F17677 /* DishDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishDetailViewController.m; sourceTree = "<group>"; };
+		90A8C4C71CAD163700F17677 /* DishDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +197,7 @@
 		90A8C4801CAA27AE00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				90A8C4C41CAD15FA00F17677 /* detail(菜单详情) */,
 				90A8C4A81CACC65100F17677 /* DishViewCell.h */,
 				90A8C4A91CACC65100F17677 /* DishViewCell.m */,
 				90A8C4AA1CACC65100F17677 /* DishViewCell.xib */,
@@ -270,6 +276,16 @@
 			path = STPopup;
 			sourceTree = "<group>";
 		};
+		90A8C4C41CAD15FA00F17677 /* detail(菜单详情) */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4C51CAD163700F17677 /* DishDetailViewController.h */,
+				90A8C4C61CAD163700F17677 /* DishDetailViewController.m */,
+				90A8C4C71CAD163700F17677 /* DishDetailViewController.xib */,
+			);
+			name = "detail(菜单详情)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */,
+				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
 				90A8C48C1CAA58F200F17677 /* OrderStoryboard.storyboard in Resources */,
 				90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */,
@@ -352,6 +369,7 @@
 				90A8C4C01CACC93600F17677 /* AFSecurityPolicy.m in Sources */,
 				90A8C4C11CACC93600F17677 /* AFURLRequestSerialization.m in Sources */,
 				90A8C4631CAA269C00F17677 /* main.m in Sources */,
+				90A8C4C81CAD163700F17677 /* DishDetailViewController.m in Sources */,
 				90A8C4AB1CACC65100F17677 /* DishInfo.m in Sources */,
 				90A8C4C21CACC93600F17677 /* AFURLResponseSerialization.m in Sources */,
 				90A8C4C31CACC93600F17677 /* AFURLSessionManager.m in Sources */,
