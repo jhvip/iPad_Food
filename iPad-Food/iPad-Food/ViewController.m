@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "AFNetworking.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -23,5 +24,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)showTableView:(UIButton *)sender {
+    
+    NSDictionary *param=@{
+                          @"class":[NSString stringWithFormat:@"%ld",sender.tag]
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    NSLog(@"%@",MenuURL);
+    [manage GET:MenuURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success,%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error %@",error);
+    }];
+}
+
 
 @end

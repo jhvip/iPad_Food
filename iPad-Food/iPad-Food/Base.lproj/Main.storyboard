@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -48,7 +48,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUj-3y-FkL">
                                 <rect key="frame" x="0.0" y="76" width="96" height="434"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-kU-vT2">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-kU-vT2">
                                         <rect key="frame" x="0.0" y="110" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264698995323275" blue="0.16702734715040246" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -56,36 +56,54 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="推荐菜品"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bU-wA-jpy"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvm-Xb-h0X">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvm-Xb-h0X">
                                         <rect key="frame" x="0.0" y="190" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264699" blue="0.16702734720000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="热菜系列"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ax-Yy-7C7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-7A-XuV">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-7A-XuV">
                                         <rect key="frame" x="0.0" y="270" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264699" blue="0.16702734720000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="凉菜系列"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57R-wG-nHJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pr-wM-jkk">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pr-wM-jkk">
                                         <rect key="frame" x="0.0" y="350" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264699" blue="0.16702734720000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="甜点系列"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eK-zt-VIQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="207-Wc-Ysg">
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="207-Wc-Ysg">
                                         <rect key="frame" x="0.0" y="430" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264699" blue="0.16702734720000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="主食系列"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WK7-Du-aPh"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtE-7C-0AL">
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtE-7C-0AL">
                                         <rect key="frame" x="0.0" y="510" width="66" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.11264699" blue="0.16702734720000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="酒水系列"/>
+                                        <connections>
+                                            <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5CX-OD-XeP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32490129645542121" green="1" blue="0.46251185498534608" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,52 +139,46 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lbG-2l-0Xz">
-                                <rect key="frame" x="106" y="76" width="484" height="514"/>
-                                <color key="backgroundColor" red="1" green="0.91003948180517358" blue="0.37626787696545205" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c8r-cX-FZu">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GW8-Q9-ySL">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRG-bX-cxS">
                                 <rect key="frame" x="0.0" y="511" width="96" height="79"/>
                                 <color key="backgroundColor" red="0.60691105769999998" green="0.57241722969999997" blue="0.5810841819" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7if-Td-gky">
+                                <rect key="frame" x="106" y="76" width="484" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lbG-2l-0Xz" secondAttribute="trailing" constant="10" id="1yK-W8-k0J"/>
                             <constraint firstItem="EUj-3y-FkL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Auo-Cj-1Rg"/>
-                            <constraint firstItem="oRG-bX-cxS" firstAttribute="bottom" secondItem="lbG-2l-0Xz" secondAttribute="bottom" id="EDq-ZV-LTe"/>
+                            <constraint firstItem="oRG-bX-cxS" firstAttribute="bottom" secondItem="7if-Td-gky" secondAttribute="bottom" id="BoB-La-8Vd"/>
+                            <constraint firstItem="7if-Td-gky" firstAttribute="leading" secondItem="EUj-3y-FkL" secondAttribute="trailing" constant="10" id="Dkv-md-XDX"/>
                             <constraint firstItem="oRG-bX-cxS" firstAttribute="width" secondItem="EUj-3y-FkL" secondAttribute="width" id="ITj-YK-s9C"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EUj-3y-FkL" secondAttribute="bottom" constant="90" id="Iwb-zO-vJu"/>
                             <constraint firstAttribute="bottom" secondItem="oRG-bX-cxS" secondAttribute="bottom" constant="10" id="KU8-gJ-DQI"/>
-                            <constraint firstItem="lbG-2l-0Xz" firstAttribute="top" secondItem="h1j-Bq-SmK" secondAttribute="bottom" constant="8" id="Vyt-t1-lLP"/>
-                            <constraint firstItem="lbG-2l-0Xz" firstAttribute="top" secondItem="EUj-3y-FkL" secondAttribute="top" id="W9h-av-UVR"/>
+                            <constraint firstItem="7if-Td-gky" firstAttribute="top" secondItem="EUj-3y-FkL" secondAttribute="top" id="N0r-bc-v1B"/>
+                            <constraint firstItem="7if-Td-gky" firstAttribute="top" secondItem="EUj-3y-FkL" secondAttribute="top" id="OAk-Kk-z4R"/>
+                            <constraint firstItem="7if-Td-gky" firstAttribute="bottom" secondItem="EUj-3y-FkL" secondAttribute="bottom" id="SZt-cF-TZX"/>
                             <constraint firstItem="EUj-3y-FkL" firstAttribute="width" secondItem="h1j-Bq-SmK" secondAttribute="width" multiplier="0.16" id="WpT-at-kGl"/>
                             <constraint firstItem="h1j-Bq-SmK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="agn-NP-CG8"/>
-                            <constraint firstItem="lbG-2l-0Xz" firstAttribute="leading" secondItem="oRG-bX-cxS" secondAttribute="trailing" constant="10" id="fHm-Ly-JOX"/>
+                            <constraint firstAttribute="trailing" secondItem="7if-Td-gky" secondAttribute="trailing" constant="10" id="blu-uN-F1m"/>
                             <constraint firstItem="oRG-bX-cxS" firstAttribute="leading" secondItem="EUj-3y-FkL" secondAttribute="leading" id="gvH-Ri-j5f"/>
+                            <constraint firstItem="EUj-3y-FkL" firstAttribute="top" secondItem="h1j-Bq-SmK" secondAttribute="bottom" constant="8" symbolic="YES" id="lcN-S1-bVM"/>
                             <constraint firstAttribute="trailing" secondItem="h1j-Bq-SmK" secondAttribute="trailing" id="nyU-iJ-YnH"/>
                             <constraint firstItem="h1j-Bq-SmK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vga-Xj-oLF"/>
                             <constraint firstItem="oRG-bX-cxS" firstAttribute="top" secondItem="EUj-3y-FkL" secondAttribute="bottom" constant="1" id="w2W-5C-p2i"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="N0r-bc-v1B"/>
+                                <exclude reference="SZt-cF-TZX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="7if-Td-gky" id="N0J-JT-YAz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
