@@ -33,6 +33,8 @@
 		90A8C4DA1CAD171100F17677 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4D51CAD171100F17677 /* UIViewController+STPopup.m */; };
 		90A8C4DE1CAE19EC00F17677 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4DC1CAE19EC00F17677 /* OrderViewController.m */; };
 		90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */; };
+		90A8C4E41CAE44E900F17677 /* orderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4E21CAE44E900F17677 /* orderViewCell.m */; };
+		90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4E31CAE44E900F17677 /* orderViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,9 @@
 		90A8C4DB1CAE19EC00F17677 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		90A8C4DC1CAE19EC00F17677 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
+		90A8C4E11CAE44E900F17677 /* orderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderViewCell.h; sourceTree = "<group>"; };
+		90A8C4E21CAE44E900F17677 /* orderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderViewCell.m; sourceTree = "<group>"; };
+		90A8C4E31CAE44E900F17677 /* orderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +195,9 @@
 		90A8C47D1CAA278F00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				90A8C4E11CAE44E900F17677 /* orderViewCell.h */,
+				90A8C4E21CAE44E900F17677 /* orderViewCell.m */,
+				90A8C4E31CAE44E900F17677 /* orderViewCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
+				90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */,
 				90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */,
 				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
@@ -404,6 +413,7 @@
 				90A8C4C11CACC93600F17677 /* AFURLRequestSerialization.m in Sources */,
 				90A8C4D91CAD171100F17677 /* UIResponder+STPopup.m in Sources */,
 				90A8C4D61CAD171100F17677 /* STPopupController.m in Sources */,
+				90A8C4E41CAE44E900F17677 /* orderViewCell.m in Sources */,
 				90A8C4D71CAD171100F17677 /* STPopupLeftBarItem.m in Sources */,
 				90A8C4DA1CAD171100F17677 /* UIViewController+STPopup.m in Sources */,
 				90A8C4631CAA269C00F17677 /* main.m in Sources */,
