@@ -10,4 +10,7 @@
 
 @interface DishDetailViewController : UIViewController
 
+
+@property(nonatomic,strong)NSString *dishNo;
+
 @end

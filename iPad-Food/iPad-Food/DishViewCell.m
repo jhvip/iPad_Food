@@ -9,9 +9,10 @@
 #import "DishViewCell.h"
 #import "DishInfo.h"
 #import "RequestUrl.h"
+
 @interface DishViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dishDetailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *manyLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *statusView;
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
 
 @property(nonatomic,strong)NSString *dishNO;
 
@@ -72,7 +74,9 @@
 
 - (IBAction)showDetail {
     
-    
+    if ([self.delegate respondsToSelector:@selector(dishViewCellShowDetail:)]) {
+        [self.delegate dishViewCellShowDetail:self.dishNO];
+    } 
 }
 
 -(void)dishViewSetInfo:(DishInfo *)dishInfo{
@@ -83,15 +87,13 @@
     
     NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,dishInfo.dishImage];
     NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-    self.imageView.image=[self OriginImage:[UIImage imageWithData:imageData] scaleToSize:CGSizeMake(150, 150)];
+
+    [self.imageButton setBackgroundImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
     if ([self.manyLabel.text isEqualToString:@"0"]) {
         self.statusView.hidden=YES;
     }else{
         self.statusView.hidden=NO;
     }
-    
-    
-    
     
 }
 

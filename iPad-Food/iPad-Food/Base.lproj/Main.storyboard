@@ -141,6 +141,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRG-bX-cxS">
                                 <rect key="frame" x="0.0" y="511" width="96" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeH-ed-S9w">
+                                        <rect key="frame" x="4" y="25" width="75" height="30"/>
+                                        <state key="normal" title="我的购物车"/>
+                                        <connections>
+                                            <action selector="showOrderView" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajT-sU-Tbd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-zb-KQq">
+                                        <rect key="frame" x="57" y="8" width="31" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.60691105769999998" green="0.57241722969999997" blue="0.5810841819" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7if-Td-gky">
@@ -177,6 +192,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="orderNum" destination="w7x-zb-KQq" id="o1y-1u-kwJ"/>
                         <outlet property="tableView" destination="7if-Td-gky" id="N0J-JT-YAz"/>
                     </connections>
                 </viewController>

@@ -10,10 +10,14 @@
 #import "AFNetworking.h"
 #import "DishInfo.h"
 #import "DishViewCell.h"
+#import "STPopup.h"
+#import "DishDetailViewController.h"
+#import "OrderViewController.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,DishViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSArray *dishList;
 
+@property (weak, nonatomic) IBOutlet UILabel *orderNum;
 @end
 
 @implementation ViewController
@@ -29,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIButton *bu=[[UIButton alloc]init];
+    bu.tag=10;
+    [self showTableView:bu];
+    
     
     [self loadTableView];
     
@@ -83,8 +91,33 @@
 
 #pragma mark cell的代理方法
 -(void)dishViewCellReloadOrder:(NSArray *)orderList{
+    NSInteger num=0;
+    for (NSDictionary *dict in orderList) {
+        NSString *numString=[dict objectForKey:@"manynum"];
+        num+=[numString intValue];
+    }
+    self.orderNum.text=[NSString stringWithFormat:@"%ld",num];
     
     [self.tableView reloadData];
+}
+-(void)dishViewCellShowDetail:(NSString *)dishNO{
+    DishDetailViewController *view=[[DishDetailViewController alloc]init];
+    view.dishNo=dishNO;
+    STPopupController *detailView=[[STPopupController alloc]initWithRootViewController:view];
+    detailView.containerView.layer.cornerRadius = 6;
+    detailView.transitionStyle = STPopupTransitionStyleFade;
+    [detailView presentInViewController:self];
+
+}
+
+#pragma mark 跳转购物车
+
+- (IBAction)showOrderView {
+    
+    OrderViewController * view = [[OrderViewController alloc]init];
+
+    [self presentViewController:view animated:YES completion:nil];
+    
 }
 
 

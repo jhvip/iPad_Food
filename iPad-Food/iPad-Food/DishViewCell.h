@@ -15,6 +15,8 @@
 //点菜代理事件
 -(void)dishViewCellReloadOrder:(NSArray*)orderList;
 
+-(void)dishViewCellShowDetail:(NSString*)dishNO;
+
 
 @end
 

@@ -2,7 +2,7 @@
 //  OrderViewController.m
 //  iPad-Food
 //
-//  Created by 蒋豪 on 16/3/29.
+//  Created by 蒋豪 on 16/4/1.
 //  Copyright © 2016年 wpx. All rights reserved.
 //
 
@@ -16,12 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)backIndex:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 /*

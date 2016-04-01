@@ -15,8 +15,6 @@
 		90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C46F1CAA269C00F17677 /* LaunchScreen.storyboard */; };
 		90A8C4871CAA282400F17677 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4861CAA282400F17677 /* LoginStoryboard.storyboard */; };
 		90A8C48A1CAA287C00F17677 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4891CAA287C00F17677 /* LoginViewController.m */; };
-		90A8C48C1CAA58F200F17677 /* OrderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */; };
-		90A8C48F1CAA590900F17677 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C48E1CAA590900F17677 /* OrderViewController.m */; };
 		90A8C4AB1CACC65100F17677 /* DishInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4A71CACC65100F17677 /* DishInfo.m */; };
 		90A8C4AC1CACC65100F17677 /* DishViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4A91CACC65100F17677 /* DishViewCell.m */; };
 		90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4AA1CACC65100F17677 /* DishViewCell.xib */; };
@@ -28,6 +26,13 @@
 		90A8C4C31CACC93600F17677 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4BC1CACC93600F17677 /* AFURLSessionManager.m */; };
 		90A8C4C81CAD163700F17677 /* DishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4C61CAD163700F17677 /* DishDetailViewController.m */; };
 		90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4C71CAD163700F17677 /* DishDetailViewController.xib */; };
+		90A8C4D61CAD171100F17677 /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4CD1CAD171100F17677 /* STPopupController.m */; };
+		90A8C4D71CAD171100F17677 /* STPopupLeftBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4CF1CAD171100F17677 /* STPopupLeftBarItem.m */; };
+		90A8C4D81CAD171100F17677 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4D11CAD171100F17677 /* STPopupNavigationBar.m */; };
+		90A8C4D91CAD171100F17677 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4D31CAD171100F17677 /* UIResponder+STPopup.m */; };
+		90A8C4DA1CAD171100F17677 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4D51CAD171100F17677 /* UIViewController+STPopup.m */; };
+		90A8C4DE1CAE19EC00F17677 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4DC1CAE19EC00F17677 /* OrderViewController.m */; };
+		90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +49,6 @@
 		90A8C4861CAA282400F17677 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		90A8C4881CAA287C00F17677 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		90A8C4891CAA287C00F17677 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderStoryboard.storyboard; sourceTree = "<group>"; };
-		90A8C48D1CAA590900F17677 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
-		90A8C48E1CAA590900F17677 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		90A8C4A61CACC65100F17677 /* DishInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishInfo.h; sourceTree = "<group>"; };
 		90A8C4A71CACC65100F17677 /* DishInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishInfo.m; sourceTree = "<group>"; };
 		90A8C4A81CACC65100F17677 /* DishViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishViewCell.h; sourceTree = "<group>"; };
@@ -69,6 +71,20 @@
 		90A8C4C51CAD163700F17677 /* DishDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishDetailViewController.h; sourceTree = "<group>"; };
 		90A8C4C61CAD163700F17677 /* DishDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishDetailViewController.m; sourceTree = "<group>"; };
 		90A8C4C71CAD163700F17677 /* DishDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishDetailViewController.xib; sourceTree = "<group>"; };
+		90A8C4CB1CAD171100F17677 /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
+		90A8C4CC1CAD171100F17677 /* STPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupController.h; sourceTree = "<group>"; };
+		90A8C4CD1CAD171100F17677 /* STPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupController.m; sourceTree = "<group>"; };
+		90A8C4CE1CAD171100F17677 /* STPopupLeftBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupLeftBarItem.h; sourceTree = "<group>"; };
+		90A8C4CF1CAD171100F17677 /* STPopupLeftBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupLeftBarItem.m; sourceTree = "<group>"; };
+		90A8C4D01CAD171100F17677 /* STPopupNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupNavigationBar.h; sourceTree = "<group>"; };
+		90A8C4D11CAD171100F17677 /* STPopupNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupNavigationBar.m; sourceTree = "<group>"; };
+		90A8C4D21CAD171100F17677 /* UIResponder+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+STPopup.h"; sourceTree = "<group>"; };
+		90A8C4D31CAD171100F17677 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
+		90A8C4D41CAD171100F17677 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
+		90A8C4D51CAD171100F17677 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		90A8C4DB1CAE19EC00F17677 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		90A8C4DC1CAE19EC00F17677 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +181,7 @@
 		90A8C47C1CAA277700F17677 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				90A8C4CA1CAD171100F17677 /* STPopup */,
 				90A8C4AF1CACC93600F17677 /* AFNetworking */,
 			);
 			name = lib;
@@ -187,9 +204,9 @@
 		90A8C47F1CAA27A500F17677 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				90A8C48B1CAA58F200F17677 /* OrderStoryboard.storyboard */,
-				90A8C48D1CAA590900F17677 /* OrderViewController.h */,
-				90A8C48E1CAA590900F17677 /* OrderViewController.m */,
+				90A8C4DB1CAE19EC00F17677 /* OrderViewController.h */,
+				90A8C4DC1CAE19EC00F17677 /* OrderViewController.m */,
+				90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -286,6 +303,24 @@
 			name = "detail(菜单详情)";
 			sourceTree = "<group>";
 		};
+		90A8C4CA1CAD171100F17677 /* STPopup */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4CB1CAD171100F17677 /* STPopup.h */,
+				90A8C4CC1CAD171100F17677 /* STPopupController.h */,
+				90A8C4CD1CAD171100F17677 /* STPopupController.m */,
+				90A8C4CE1CAD171100F17677 /* STPopupLeftBarItem.h */,
+				90A8C4CF1CAD171100F17677 /* STPopupLeftBarItem.m */,
+				90A8C4D01CAD171100F17677 /* STPopupNavigationBar.h */,
+				90A8C4D11CAD171100F17677 /* STPopupNavigationBar.m */,
+				90A8C4D21CAD171100F17677 /* UIResponder+STPopup.h */,
+				90A8C4D31CAD171100F17677 /* UIResponder+STPopup.m */,
+				90A8C4D41CAD171100F17677 /* UIViewController+STPopup.h */,
+				90A8C4D51CAD171100F17677 /* UIViewController+STPopup.m */,
+			);
+			path = STPopup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,10 +378,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
 				90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */,
 				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
-				90A8C48C1CAA58F200F17677 /* OrderStoryboard.storyboard in Resources */,
 				90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */,
 				90A8C46C1CAA269C00F17677 /* Main.storyboard in Resources */,
 				90A8C4871CAA282400F17677 /* LoginStoryboard.storyboard in Resources */,
@@ -363,17 +398,22 @@
 				90A8C48A1CAA287C00F17677 /* LoginViewController.m in Sources */,
 				90A8C4BF1CACC93600F17677 /* AFNetworkReachabilityManager.m in Sources */,
 				90A8C4AC1CACC65100F17677 /* DishViewCell.m in Sources */,
-				90A8C48F1CAA590900F17677 /* OrderViewController.m in Sources */,
 				90A8C4691CAA269C00F17677 /* ViewController.m in Sources */,
 				90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */,
 				90A8C4C01CACC93600F17677 /* AFSecurityPolicy.m in Sources */,
 				90A8C4C11CACC93600F17677 /* AFURLRequestSerialization.m in Sources */,
+				90A8C4D91CAD171100F17677 /* UIResponder+STPopup.m in Sources */,
+				90A8C4D61CAD171100F17677 /* STPopupController.m in Sources */,
+				90A8C4D71CAD171100F17677 /* STPopupLeftBarItem.m in Sources */,
+				90A8C4DA1CAD171100F17677 /* UIViewController+STPopup.m in Sources */,
 				90A8C4631CAA269C00F17677 /* main.m in Sources */,
 				90A8C4C81CAD163700F17677 /* DishDetailViewController.m in Sources */,
 				90A8C4AB1CACC65100F17677 /* DishInfo.m in Sources */,
 				90A8C4C21CACC93600F17677 /* AFURLResponseSerialization.m in Sources */,
+				90A8C4DE1CAE19EC00F17677 /* OrderViewController.m in Sources */,
 				90A8C4C31CACC93600F17677 /* AFURLSessionManager.m in Sources */,
 				90A8C4BE1CACC93600F17677 /* AFHTTPSessionManager.m in Sources */,
+				90A8C4D81CAD171100F17677 /* STPopupNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
