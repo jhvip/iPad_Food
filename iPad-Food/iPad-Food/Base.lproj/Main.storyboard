@@ -142,23 +142,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRG-bX-cxS">
                                 <rect key="frame" x="0.0" y="511" width="96" height="79"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeH-ed-S9w">
-                                        <rect key="frame" x="4" y="25" width="75" height="30"/>
-                                        <state key="normal" title="我的购物车"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeH-ed-S9w">
+                                        <rect key="frame" x="10" y="15" width="76" height="54"/>
+                                        <state key="normal" title="我的购物车" image="edit"/>
                                         <connections>
                                             <action selector="showOrderView" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajT-sU-Tbd"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-zb-KQq">
-                                        <rect key="frame" x="57" y="8" width="31" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-zb-KQq">
+                                        <rect key="frame" x="44" y="10" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="k0q-2V-sl9"/>
+                                            <constraint firstAttribute="width" constant="33" id="oaG-el-KM0"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.60691105769999998" green="0.57241722969999997" blue="0.5810841819" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="w7x-zb-KQq" secondAttribute="trailing" constant="19" id="3BO-cY-oR6"/>
+                                    <constraint firstItem="UeH-ed-S9w" firstAttribute="leading" secondItem="oRG-bX-cxS" secondAttribute="leading" constant="10" id="DOn-wF-5Iw"/>
+                                    <constraint firstItem="w7x-zb-KQq" firstAttribute="top" secondItem="oRG-bX-cxS" secondAttribute="top" constant="10" id="H6z-pW-p0J"/>
+                                    <constraint firstAttribute="bottom" secondItem="UeH-ed-S9w" secondAttribute="bottom" constant="10" id="SHD-iT-zJI"/>
+                                    <constraint firstAttribute="trailing" secondItem="UeH-ed-S9w" secondAttribute="trailing" constant="10" id="brD-BP-hh3"/>
+                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7if-Td-gky">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7if-Td-gky">
                                 <rect key="frame" x="106" y="76" width="484" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -201,4 +212,7 @@
             <point key="canvasLocation" x="294" y="220"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit" width="53" height="54"/>
+    </resources>
 </document>

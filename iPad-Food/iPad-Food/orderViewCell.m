@@ -51,13 +51,16 @@
 
 - (IBAction)changeOrderNum:(UIButton *)sender {
     NSInteger num=[self.numTextField.text intValue];
-    if (sender.tag==0&num>0) {
+    if (sender.tag==0&num>1) {
         num--;
     }else if(sender.tag==1){
         num++;
     }
     self.numTextField.text=[NSString stringWithFormat:@"%ld",num];
     
+    if ([self.delegate respondsToSelector:@selector(orderViewChangeInfo:withNum:)]) {
+        [self.delegate orderViewChangeInfo:self.dishNo withNum:self.numTextField.text];
+    }
 }
 
 

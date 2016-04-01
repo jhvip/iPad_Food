@@ -11,6 +11,7 @@
 @protocol orderViewCellDelegate<NSObject>
 
 -(void)orderViewDeleteInfo:(NSString*)dishNO;
+-(void)orderViewChangeInfo:(NSString*)dishNo withNum:(NSString *)num;
 
 @end
 

@@ -69,6 +69,8 @@
     self.tableView.dataSource=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"DishViewCell" bundle:nil] forCellReuseIdentifier:@"dishView"];
     self.tableView.rowHeight=200;
+    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg"]];
+    self.tableView.backgroundView=image;
 }
 
 #pragma mark 实现TableView代理方法
@@ -86,6 +88,7 @@
     }
     cell.delegate=self;
     [cell dishViewSetInfo:self.dishList[indexPath.row]];
+    cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
 

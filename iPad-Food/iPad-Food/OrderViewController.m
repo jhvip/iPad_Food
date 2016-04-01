@@ -82,15 +82,30 @@
             return;
         }
     }
+}
 
+-(void)orderViewChangeInfo:(NSString *)dishNo withNum:(NSString *)num{
+    for (NSDictionary *dict in self.orderList) {
+        NSString *dish_no=[dict objectForKey:@"id"];
+        if ([dish_no isEqualToString:dishNo]) {
+            NSMutableDictionary *dic=[NSMutableDictionary dictionaryWithDictionary:dict];
+            [dic setValue:num forKey:@"manynum"];
+            [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dict] withObject:dic];
+            return;
+        }
+    }
 
 }
 
+
+
+#pragma mark 保存信息到列表
 -(void)saveInfo{
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     [ud setObject:self.orderList forKey:@"dishes"];
     
 }
+
 
 /*
 #pragma mark - Navigation
