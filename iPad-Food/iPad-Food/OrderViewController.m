@@ -94,19 +94,35 @@
 
 #pragma mark cell的代理方法
 -(void)orderViewDeleteInfo:(NSString *)dishNO{
-    for (NSDictionary *dict in self.orderList) {
-        NSString *dish_no=[dict objectForKey:@"id"];
-        if ([dish_no isEqualToString:dishNO]) {
-            
-            [self.orderList removeObject:dict];
-            if (self.orderList.count==0) {
-                self.tableView.sectionFooterHeight=0;
+    
+    
+    UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"确定删除" message:@"确定删除所选的菜单吗？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        for (NSDictionary *dict in self.orderList) {
+            NSString *dish_no=[dict objectForKey:@"id"];
+            if ([dish_no isEqualToString:dishNO]) {
+                
+                [self.orderList removeObject:dict];
+                if (self.orderList.count==0) {
+                    self.tableView.sectionFooterHeight=0;
+                }
+                [self.tableView reloadData];
+                break;
             }
-            [self.tableView reloadData];
-            break;
         }
-    }
-    self.acountMoneyLabel.text=[self sumMoney];
+        self.acountMoneyLabel.text=[self sumMoney];
+        
+        
+    }];
+    [alert addAction:cacelButton];
+    [alert addAction:makeButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
     
 }
 
@@ -177,10 +193,38 @@
 }
 #pragma mark 清空菜单
 - (IBAction)clearList {
-    [self.orderList removeAllObjects];
     
-    self.tableView.sectionFooterHeight=0;
-    [self.tableView reloadData];
+    if (self.orderList.count==0) {
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"清空失败" message:@"你还没有点菜" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+    
+    
+    UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"确定清空" message:@"确定清空所有的菜单吗？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self.orderList removeAllObjects];
+        [self saveInfo];
+        self.tableView.sectionFooterHeight=0;
+        [self.tableView reloadData];
+    }];
+    [alert addAction:cacelButton];
+    [alert addAction:makeButton];
+   
+    [self presentViewController:alert animated:YES completion:nil];
+    
+   
+    
 }
 
 #pragma Mark 显示菜单详情
