@@ -9,9 +9,10 @@
 #ifndef RequestUrl_h
 #define RequestUrl_h
 
-
-#define ip @"127.0.0.1:8080/iPad_Server"
-
+//内网测试IP
+//#define ip @"127.0.0.1:8080/iPad_Server"
+//外网IP
+#define ip @"115.159.184.122:8080/iPad_Server"
 
 //菜单URL
 #define MenuURL [NSString stringWithFormat:@"http://%@/DishControlServlet",ip]

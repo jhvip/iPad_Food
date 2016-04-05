@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nHK-FA-Ru7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAZ-Sj-kny">
-                                <rect key="frame" x="347" y="80" width="152" height="69"/>
+                                <rect key="frame" x="347" y="60" width="152" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="JML-Z4-SZH"/>
                                     <constraint firstAttribute="height" constant="69" id="bUF-1m-iRp"/>
@@ -42,18 +45,35 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.87149236437156019" blue="0.5888595040897262" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nHK-FA-Ru7" secondAttribute="trailing" id="8NL-Fb-jb5"/>
+                            <constraint firstItem="nHK-FA-Ru7" firstAttribute="top" secondItem="Ozx-kJ-QXs" secondAttribute="bottom" id="BZY-6G-bTH"/>
                             <constraint firstItem="YAZ-Sj-kny" firstAttribute="top" secondItem="Ozx-kJ-QXs" secondAttribute="bottom" constant="60" id="GJV-YI-Qvg"/>
+                            <constraint firstItem="nHK-FA-Ru7" firstAttribute="leading" secondItem="8ch-pO-52O" secondAttribute="leading" id="UaO-Os-ZFA"/>
                             <constraint firstItem="ghU-HK-WgC" firstAttribute="top" secondItem="djC-4J-xNr" secondAttribute="bottom" constant="30" id="bzO-wc-pXU"/>
                             <constraint firstItem="djC-4J-xNr" firstAttribute="leading" secondItem="YAZ-Sj-kny" secondAttribute="trailing" constant="-84" id="cXH-0a-Nxz"/>
                             <constraint firstAttribute="trailing" secondItem="djC-4J-xNr" secondAttribute="trailing" constant="30" id="goX-Nb-0QN"/>
+                            <constraint firstItem="ghU-HK-WgC" firstAttribute="top" secondItem="nHK-FA-Ru7" secondAttribute="bottom" id="mVL-j6-gkH"/>
+                            <constraint firstItem="nHK-FA-Ru7" firstAttribute="top" secondItem="YAZ-Sj-kny" secondAttribute="bottom" id="of9-3f-cnE"/>
+                            <constraint firstItem="nHK-FA-Ru7" firstAttribute="top" secondItem="Ozx-kJ-QXs" secondAttribute="bottom" id="woY-4X-Z56"/>
+                            <constraint firstItem="djC-4J-xNr" firstAttribute="top" secondItem="nHK-FA-Ru7" secondAttribute="bottom" id="y1k-xN-LVa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BZY-6G-bTH"/>
+                                <exclude reference="of9-3f-cnE"/>
+                                <exclude reference="y1k-xN-LVa"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xU-cw-jkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="94" y="66"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_bg" width="1024" height="768"/>
+    </resources>
 </document>

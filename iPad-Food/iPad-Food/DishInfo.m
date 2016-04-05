@@ -29,6 +29,7 @@
     menuInfo.dishMoney=[dict objectForKey:@"dish_price"];;
     menuInfo.dishTitle=[dict objectForKey:@"dish_name"];
     menuInfo.dishNo=[dict objectForKey:@"dish_no"];
+    menuInfo.dishMany=@"0";
     return menuInfo;
 }
 

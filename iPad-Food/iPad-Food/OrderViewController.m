@@ -8,9 +8,18 @@
 
 #import "OrderViewController.h"
 #import "orderViewCell.h"
+#import "AFNetworking.h"
+#import "DishDetailViewController.h"
+#import "STPopup.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
+
+@property (weak, nonatomic) IBOutlet UILabel *dishNoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *acountMoneyLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *dishImage;
 
 @end
 
@@ -27,10 +36,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
-
-    self.orderList=[NSMutableArray arrayWithArray:[ud objectForKey:@"dishes"]];
     [self loadTableView];
+    if (self.orderList.count==0) {
+        self.tableView.sectionFooterHeight=0;
+    }
     
 }
 
@@ -50,10 +59,22 @@
     self.tableView.dataSource=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"orderViewCell" bundle:nil] forCellReuseIdentifier:@"orderView"];
     self.tableView.rowHeight=80;
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.orderList=[NSMutableArray arrayWithArray:[ud objectForKey:@"dishes"]];
+    self.acountMoneyLabel.text=[self sumMoney];
+    //设置section行高
+    self.tableView.sectionHeaderHeight=60;
+    self.tableView.sectionFooterHeight=80;
+    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg"]];
+    self.tableView.backgroundView=image;
+
 }
 
 
 #pragma mark 实现TableView代理方法
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 60;
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -61,7 +82,7 @@
     return self.orderList.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     orderViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"orderView" forIndexPath:indexPath];
     if (!cell) {
         cell=[[orderViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dishView"];
@@ -78,10 +99,15 @@
         if ([dish_no isEqualToString:dishNO]) {
             
             [self.orderList removeObject:dict];
+            if (self.orderList.count==0) {
+                self.tableView.sectionFooterHeight=0;
+            }
             [self.tableView reloadData];
-            return;
+            break;
         }
     }
+    self.acountMoneyLabel.text=[self sumMoney];
+    
 }
 
 -(void)orderViewChangeInfo:(NSString *)dishNo withNum:(NSString *)num{
@@ -91,9 +117,11 @@
             NSMutableDictionary *dic=[NSMutableDictionary dictionaryWithDictionary:dict];
             [dic setValue:num forKey:@"manynum"];
             [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dict] withObject:dic];
-            return;
+            break;
         }
     }
+    self.acountMoneyLabel.text=[self sumMoney];
+    
 
 }
 
@@ -106,6 +134,66 @@
     
 }
 
+#pragma mark tableView 代理方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *dishInfo=self.orderList[indexPath.row];
+    self.dishNoLabel.text=[dishInfo objectForKey:@"id"];
+    
+    NSDictionary *param=@{@"dish_no":self.dishNoLabel.text,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage GET:DetailURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //NSLog(@"success,%@",responseObject);
+        
+        NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,[responseObject objectForKey:@"dish_pic"]];
+        NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        [self.dishImage setBackgroundImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error %@",error);
+    }];
+    
+}
+
+
+-(NSString*)sumMoney{
+    NSInteger sum=0;
+    for (NSDictionary *dict in self.orderList) {
+        NSInteger money=[[dict objectForKey:@"acountnum"] intValue];
+        NSInteger num=[[dict objectForKey:@"manynum"] intValue];
+        sum+=money*num;
+    }
+    return [NSString stringWithFormat:@"%ld",sum];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view =[[[NSBundle mainBundle]loadNibNamed:@"HeadView" owner:nil options:nil]lastObject];
+    return view;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view =[[[NSBundle mainBundle]loadNibNamed:@"FootView" owner:nil options:nil]lastObject];
+    return view;
+}
+#pragma mark 清空菜单
+- (IBAction)clearList {
+    [self.orderList removeAllObjects];
+    
+    self.tableView.sectionFooterHeight=0;
+    [self.tableView reloadData];
+}
+
+#pragma Mark 显示菜单详情
+
+- (IBAction)showDetail:(id)sender {
+    DishDetailViewController *view=[[DishDetailViewController alloc]init];
+    view.dishNo=self.dishNoLabel.text;
+    STPopupController *detailView=[[STPopupController alloc]initWithRootViewController:view];
+    detailView.containerView.layer.cornerRadius = 6;
+    detailView.transitionStyle = STPopupTransitionStyleFade;
+    [detailView presentInViewController:self];
+    
+}
 
 /*
 #pragma mark - Navigation

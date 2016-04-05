@@ -15,6 +15,7 @@
 @property(nonatomic,strong)NSString *dishTitle;
 @property(nonatomic,strong)NSString *dishDetail;
 @property(nonatomic,strong)NSString *dishNo;
+@property(nonatomic,strong)NSString *dishMany;
 +(NSArray*)dishInfoSet:(NSArray*)dishList;
 
 @end

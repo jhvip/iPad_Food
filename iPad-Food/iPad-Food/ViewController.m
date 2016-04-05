@@ -18,6 +18,10 @@
 @property(nonatomic,strong)NSArray *dishList;
 
 @property (weak, nonatomic) IBOutlet UILabel *orderNum;
+
+@property (weak, nonatomic) IBOutlet UIView *buttonListView;
+@property (weak, nonatomic) IBOutlet UIButton *firstButton;
+
 @end
 
 @implementation ViewController
@@ -33,11 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *bu=[[UIButton alloc]init];
-    bu.tag=10;
-    [self showTableView:bu];
-    
-    
     [self loadTableView];
     
 }
@@ -60,7 +59,16 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error %@",error);
     }];
+    [self changeButtonStatus:sender];
 }
+
+-(void)changeButtonStatus:(UIButton*)sender{
+    for (UIButton *button in self.buttonListView.subviews) {
+        button.selected=NO;
+    }
+    sender.selected=YES;
+}
+
 
 
 #pragma mark 加载tableView
@@ -87,7 +95,18 @@
         cell=[[DishViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dishView"];
     }
     cell.delegate=self;
-    [cell dishViewSetInfo:self.dishList[indexPath.row]];
+    DishInfo *dishInfo=self.dishList[indexPath.row];
+    //给已点菜品赋值
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSArray *array=[ud objectForKey:@"dishes"];
+    for (NSDictionary *dic in array) {
+        if ([[dic objectForKey:@"id"]isEqualToString:dishInfo.dishNo]) {
+        dishInfo.dishMany=[dic objectForKey:@"manynum"];
+        }
+             }
+    
+    
+    [cell dishViewSetInfo:dishInfo];
     cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
@@ -100,8 +119,8 @@
         num+=[numString intValue];
     }
     self.orderNum.text=[NSString stringWithFormat:@"%ld",num];
-    
     [self.tableView reloadData];
+
 }
 -(void)dishViewCellShowDetail:(NSString *)dishNO{
     DishDetailViewController *view=[[DishDetailViewController alloc]init];
@@ -121,6 +140,10 @@
 
     [self presentViewController:view animated:YES completion:nil];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self showTableView:self.firstButton];
 }
 
 

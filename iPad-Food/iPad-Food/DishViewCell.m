@@ -10,6 +10,8 @@
 #import "DishInfo.h"
 #import "RequestUrl.h"
 
+#import "UIButton+WebCache.h"
+
 @interface DishViewCell()
 
 
@@ -61,9 +63,7 @@
     }
     
     [ud setObject:array forKey:@"dishes"];
-    
-    self.manyLabel.text=[NSString stringWithFormat:@"%d",num];
-    
+
     if ([self.delegate respondsToSelector:@selector(dishViewCellReloadOrder:)]) {
         [self.delegate dishViewCellReloadOrder:array];
     }
@@ -83,13 +83,19 @@
 -(void)dishViewSetInfo:(DishInfo *)dishInfo{
     self.titleLabel.text=dishInfo.dishTitle;
     self.moneyLabel.text=dishInfo.dishMoney;
-    self.detailTextLabel.text=dishInfo.dishDetail;
+    self.dishDetailLabel.text=dishInfo.dishDetail;
+ 
     self.dishNO=dishInfo.dishNo;
-    
-    NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,dishInfo.dishImage];
-    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
 
-    [self.imageButton setBackgroundImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+    self.manyLabel.text=dishInfo.dishMany;
+    NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,dishInfo.dishImage];
+//    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+//
+//    [self.imageButton setBackgroundImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+    
+    [self.imageButton sd_setBackgroundImageWithURL:[NSURL URLWithString:url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"photoDefault"]];
+    
+    
     if ([self.manyLabel.text isEqualToString:@"0"]) {
         self.statusView.hidden=YES;
     }else{
@@ -97,7 +103,6 @@
     }
     
 }
-
 
 
 

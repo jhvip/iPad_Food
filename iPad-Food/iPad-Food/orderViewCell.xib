@@ -14,13 +14,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="768" height="67.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tableRow_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-fe-nNw">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="67.5"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宫保鸡丁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-40-Fwy">
                         <rect key="frame" x="20" y="19" width="130" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="130" id="dS6-Yn-I7P"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND4-fI-SyN">
@@ -31,30 +34,17 @@
                             <action selector="changeOrderNum:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dv8-cX-3rX"/>
                         </connections>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-k4-4Ps">
-                        <rect key="frame" x="250" y="19" width="36" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="xFH-l5-s4w"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                    </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18元/份" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-fV-YxV">
-                        <rect key="frame" x="437" y="19" width="122" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18元/份" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-fV-YxV">
+                        <rect key="frame" x="451" y="19" width="122" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="122" id="hBw-h9-KVf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNc-B9-6dL">
-                        <rect key="frame" x="536" y="14.5" width="44" height="39"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <state key="normal" title="做法"/>
-                    </button>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyn-RX-uzO">
-                        <rect key="frame" x="296" y="13.5" width="30" height="41"/>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyn-RX-uzO">
+                        <rect key="frame" x="310" y="13.5" width="30" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <state key="normal" title="+"/>
                         <connections>
@@ -62,22 +52,40 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UO2-sN-21f">
-                        <rect key="frame" x="660" y="13" width="48" height="41"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                        <state key="normal" title="删除"/>
+                        <rect key="frame" x="632" y="13" width="76" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="删除" backgroundImage="delete">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <connections>
                             <action selector="deleteOrder:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E9f-9l-0wR"/>
                         </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-k4-4Ps">
+                        <rect key="frame" x="250" y="19" width="50" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="xFH-l5-s4w"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNc-B9-6dL">
+                        <rect key="frame" x="476" y="13.5" width="76" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="做法" backgroundImage="taste"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="UO2-sN-21f" secondAttribute="trailing" constant="60" id="1xs-Ca-xUi"/>
                     <constraint firstItem="UO2-sN-21f" firstAttribute="leading" secondItem="MNc-B9-6dL" secondAttribute="trailing" constant="80" id="3Ug-a8-snu"/>
                     <constraint firstItem="UO2-sN-21f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3vn-Z8-fs2"/>
+                    <constraint firstItem="Efv-fe-nNw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="904-tS-u0A"/>
                     <constraint firstItem="Awg-fV-YxV" firstAttribute="leading" secondItem="Oyn-RX-uzO" secondAttribute="trailing" constant="111" id="9qD-bX-rCn"/>
                     <constraint firstItem="MNc-B9-6dL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IfR-jS-jo8"/>
                     <constraint firstItem="0vB-40-Fwy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Jcj-U4-A79"/>
+                    <constraint firstAttribute="bottom" secondItem="Efv-fe-nNw" secondAttribute="bottom" id="KVm-92-Sdw"/>
                     <constraint firstItem="ND4-fI-SyN" firstAttribute="leading" secondItem="0vB-40-Fwy" secondAttribute="trailing" constant="60" id="Lbz-Nf-SzP"/>
+                    <constraint firstAttribute="trailing" secondItem="Efv-fe-nNw" secondAttribute="trailing" id="Lk1-df-lVs"/>
                     <constraint firstItem="Oyn-RX-uzO" firstAttribute="leading" secondItem="mrC-k4-4Ps" secondAttribute="trailing" constant="10" id="QH2-Zp-q1N"/>
                     <constraint firstItem="mrC-k4-4Ps" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="R2C-yw-SFa"/>
                     <constraint firstItem="ND4-fI-SyN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TFX-5f-tsU"/>
@@ -85,6 +93,7 @@
                     <constraint firstItem="0vB-40-Fwy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bZx-mZ-OgZ"/>
                     <constraint firstItem="Oyn-RX-uzO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f3Q-4p-dXN"/>
                     <constraint firstItem="Awg-fV-YxV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hcW-zp-wrO"/>
+                    <constraint firstItem="Efv-fe-nNw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ySr-Gz-0sH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -95,4 +104,9 @@
             <point key="canvasLocation" x="509" y="155"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="delete" width="76" height="41"/>
+        <image name="tableRow_bg" width="767" height="73"/>
+        <image name="taste" width="76" height="41"/>
+    </resources>
 </document>
