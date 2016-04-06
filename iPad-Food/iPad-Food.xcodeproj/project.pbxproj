@@ -53,6 +53,8 @@
 		90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4DD1CAE19EC00F17677 /* OrderViewController.xib */; };
 		90A8C4E41CAE44E900F17677 /* orderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4E21CAE44E900F17677 /* orderViewCell.m */; };
 		90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4E31CAE44E900F17677 /* orderViewCell.xib */; };
+		90AA15C01CB4AC0E005C7BB4 /* MakeTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */; };
+		90AA15C11CB4AC0E005C7BB4 /* MakeTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +145,9 @@
 		90A8C4E11CAE44E900F17677 /* orderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderViewCell.h; sourceTree = "<group>"; };
 		90A8C4E21CAE44E900F17677 /* orderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderViewCell.m; sourceTree = "<group>"; };
 		90A8C4E31CAE44E900F17677 /* orderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderViewCell.xib; sourceTree = "<group>"; };
+		90AA15BD1CB4AC0E005C7BB4 /* MakeTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeTagView.h; sourceTree = "<group>"; };
+		90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeTagView.m; sourceTree = "<group>"; };
+		90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeTagView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +299,9 @@
 				90A8C4E31CAE44E900F17677 /* orderViewCell.xib */,
 				9041771A1CB0BCF400ED2389 /* HeadView.xib */,
 				9041771C1CB127E400ED2389 /* FootView.xib */,
+				90AA15BD1CB4AC0E005C7BB4 /* MakeTagView.h */,
+				90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */,
+				90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -484,6 +492,7 @@
 			files = (
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
 				9041771B1CB0BCF400ED2389 /* HeadView.xib in Resources */,
+				90AA15C11CB4AC0E005C7BB4 /* MakeTagView.xib in Resources */,
 				90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */,
 				90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */,
 				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
@@ -538,6 +547,7 @@
 				904177821CB349EA00ED2389 /* UIImageView+WebCache.m in Sources */,
 				90A8C4BE1CACC93600F17677 /* AFHTTPSessionManager.m in Sources */,
 				90A8C4D81CAD171100F17677 /* STPopupNavigationBar.m in Sources */,
+				90AA15C01CB4AC0E005C7BB4 /* MakeTagView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

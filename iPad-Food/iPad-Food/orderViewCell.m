@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *numTextField;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (nonatomic,strong)NSString *dishNo;
+
+
+
+
 @end
 
 @implementation orderViewCell
@@ -38,6 +42,7 @@
     self.moneyLabel.text=[NSString stringWithFormat:@"%@元/份",money];
     self.numTextField.text=[dict objectForKey:@"manynum"];
     self.dishNo=[dict objectForKey:@"id"];
+    NSLog(@"%@",[dict objectForKey:@"tagList"]);
 }
 
 
@@ -61,6 +66,14 @@
     if ([self.delegate respondsToSelector:@selector(orderViewChangeInfo:withNum:)]) {
         [self.delegate orderViewChangeInfo:self.dishNo withNum:self.numTextField.text];
     }
+}
+
+
+- (IBAction)makeTag:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(orderViewMakeTag:)]) {
+        [self.delegate orderViewMakeTag:self.dishNo];
+    }
+    
 }
 
 

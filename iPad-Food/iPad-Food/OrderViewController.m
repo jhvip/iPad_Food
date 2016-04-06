@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "DishDetailViewController.h"
 #import "STPopup.h"
+#import "MakeTagView.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
@@ -89,6 +90,7 @@
     }
     cell.delegate=self;
     [cell orderViewSetInfo:self.orderList[indexPath.row]];
+    
     return cell;
 }
 
@@ -139,9 +141,18 @@
     }
     self.acountMoneyLabel.text=[self sumMoney];
     
-
 }
 
+-(void)orderViewMakeTag:(NSString *)dishNo{
+    MakeTagView *view=[[MakeTagView alloc]init];
+    view.dishNo=dishNo;
+    STPopupController *makeTagView=[[STPopupController alloc]initWithRootViewController:view];
+    makeTagView.containerView.layer.cornerRadius = 6;
+    makeTagView.transitionStyle = STPopupTransitionStyleFade;
+    makeTagView.navigationBarHidden=YES;
+    [makeTagView presentInViewController:self];
+
+}
 
 
 #pragma mark 保存信息到列表
@@ -239,6 +250,34 @@
     [detailView presentInViewController:self];
     
 }
+
+#pragma mark 加载口味设置
+-(void)viewWillAppear:(BOOL)animated{
+    NSNotificationCenter *notification= [NSNotificationCenter defaultCenter];
+    [notification addObserver:self
+           selector:@selector(setTag:)
+               name:@"tagInfo"
+             object:nil];
+
+}
+
+-(void)setTag:(NSNotification*)sender{
+    NSDictionary *tagInfo=[sender object];
+    NSString *dishNo=[tagInfo objectForKey:@"dishNo"];
+    NSArray *tagList=[tagInfo objectForKey:@"tagList"];
+    for (NSDictionary *dic in self.orderList) {
+        if ([[dic objectForKey:@"id"]isEqualToString:dishNo]) {
+            NSMutableDictionary *dicTemp=[NSMutableDictionary dictionaryWithDictionary:dic];
+            [dicTemp setValue:tagList forKey:@"tagList"];
+            [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dic] withObject:dicTemp];
+            
+            break;
+        }
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+}
+
 
 /*
 #pragma mark - Navigation
