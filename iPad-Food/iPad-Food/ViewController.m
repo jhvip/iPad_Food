@@ -55,7 +55,7 @@
     [manage GET:MenuURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.dishList=[DishInfo dishInfoSet:responseObject];
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[[NSIndexSet alloc]initWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error %@",error);
     }];
@@ -119,6 +119,7 @@
         num+=[numString intValue];
     }
     self.orderNum.text=[NSString stringWithFormat:@"%ld",num];
+    
     [self.tableView reloadData];
 
 }

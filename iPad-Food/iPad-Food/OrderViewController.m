@@ -108,7 +108,8 @@
                 if (self.orderList.count==0) {
                     self.tableView.sectionFooterHeight=0;
                 }
-                [self.tableView reloadData];
+               // [self.tableView reloadData];
+                [self.tableView reloadSections:[[NSIndexSet alloc]initWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
                 break;
             }
         }
@@ -195,36 +196,36 @@
 - (IBAction)clearList {
     
     if (self.orderList.count==0) {
-        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"清空失败" message:@"你还没有点菜" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"清空失败" message:@"您的当前菜单为空" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         
-        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
         [alert addAction:cacelButton];
         [alert addAction:makeButton];
         
         [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        
+    }else{
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"确定清空" message:@"确定清空所有的菜单吗？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self.orderList removeAllObjects];
+            self.acountMoneyLabel.text=0;
+            [self saveInfo];
+            self.tableView.sectionFooterHeight=0;
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    
-    
-    
-    UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"确定清空" message:@"确定清空所有的菜单吗？" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    
-    UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [self.orderList removeAllObjects];
-        [self saveInfo];
-        self.tableView.sectionFooterHeight=0;
-        [self.tableView reloadData];
-    }];
-    [alert addAction:cacelButton];
-    [alert addAction:makeButton];
-   
-    [self presentViewController:alert animated:YES completion:nil];
-    
-   
-    
+
 }
 
 #pragma Mark 显示菜单详情
