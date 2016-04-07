@@ -66,6 +66,7 @@
 }
 //长按手势响应
 -(void)handelPress:(UILongPressGestureRecognizer*)sender{
+    NSLog(@"asdasdas");
     UIButton *but=(UIButton*)[sender view];
     [self changeNum:but];
 }
