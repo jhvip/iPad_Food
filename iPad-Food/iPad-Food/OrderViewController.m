@@ -12,6 +12,7 @@
 #import "DishDetailViewController.h"
 #import "STPopup.h"
 #import "MakeTagView.h"
+#import "PlaceOrderViewController.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
@@ -37,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self loadInfo];
     [self loadTableView];
     if (self.orderList.count==0) {
         self.tableView.sectionFooterHeight=0;
@@ -60,8 +62,7 @@
     self.tableView.dataSource=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"orderViewCell" bundle:nil] forCellReuseIdentifier:@"orderView"];
     self.tableView.rowHeight=80;
-    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
-    self.orderList=[NSMutableArray arrayWithArray:[ud objectForKey:@"dishes"]];
+    
     self.acountMoneyLabel.text=[self sumMoney];
     //设置section行高
     self.tableView.sectionHeaderHeight=60;
@@ -143,9 +144,9 @@
     
 }
 
--(void)orderViewMakeTag:(NSString *)dishNo{
+-(void)orderViewMakeTag:(NSDictionary *)dishInfo{
     MakeTagView *view=[[MakeTagView alloc]init];
-    view.dishNo=dishNo;
+    view.dishInfo=dishInfo;
     STPopupController *makeTagView=[[STPopupController alloc]initWithRootViewController:view];
     makeTagView.containerView.layer.cornerRadius = 6;
     makeTagView.transitionStyle = STPopupTransitionStyleFade;
@@ -159,7 +160,10 @@
 -(void)saveInfo{
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     [ud setObject:self.orderList forKey:@"dishes"];
-    
+}
+-(void)loadInfo{
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.orderList=[NSMutableArray arrayWithArray:[ud objectForKey:@"dishes"]];
 }
 
 #pragma mark tableView 代理方法
@@ -258,24 +262,32 @@
            selector:@selector(setTag:)
                name:@"tagInfo"
              object:nil];
-
+    
 }
 
 -(void)setTag:(NSNotification*)sender{
     NSDictionary *tagInfo=[sender object];
-    NSString *dishNo=[tagInfo objectForKey:@"dishNo"];
-    NSArray *tagList=[tagInfo objectForKey:@"tagList"];
+    NSString *dishNo=[tagInfo objectForKey:@"id"];
     for (NSDictionary *dic in self.orderList) {
         if ([[dic objectForKey:@"id"]isEqualToString:dishNo]) {
-            NSMutableDictionary *dicTemp=[NSMutableDictionary dictionaryWithDictionary:dic];
-            [dicTemp setValue:tagList forKey:@"tagList"];
-            [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dic] withObject:dicTemp];
-            
+            [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dic] withObject:tagInfo];
             break;
         }
     }
+    [self.tableView reloadData];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+
+- (IBAction)placeOrder:(UIButton *)sender {
+    PlaceOrderViewController *view=[[PlaceOrderViewController alloc]init];
+    view.orderList=self.orderList;
+    STPopupController *placeOrderView=[[STPopupController alloc]initWithRootViewController:view];
+    placeOrderView.containerView.layer.cornerRadius = 6;
+    placeOrderView.transitionStyle = STPopupTransitionStyleFade;
+    placeOrderView.navigationBarHidden=YES;
+    [placeOrderView presentInViewController:self];
+    
 }
 
 

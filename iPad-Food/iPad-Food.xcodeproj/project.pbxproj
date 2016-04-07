@@ -55,6 +55,8 @@
 		90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4E31CAE44E900F17677 /* orderViewCell.xib */; };
 		90AA15C01CB4AC0E005C7BB4 /* MakeTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */; };
 		90AA15C11CB4AC0E005C7BB4 /* MakeTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */; };
+		90AA15C91CB640EA005C7BB4 /* PlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA15C71CB640EA005C7BB4 /* PlaceOrderViewController.m */; };
+		90AA15CA1CB640EA005C7BB4 /* PlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90AA15C81CB640EA005C7BB4 /* PlaceOrderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,9 @@
 		90AA15BD1CB4AC0E005C7BB4 /* MakeTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeTagView.h; sourceTree = "<group>"; };
 		90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeTagView.m; sourceTree = "<group>"; };
 		90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeTagView.xib; sourceTree = "<group>"; };
+		90AA15C61CB640EA005C7BB4 /* PlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderViewController.h; sourceTree = "<group>"; };
+		90AA15C71CB640EA005C7BB4 /* PlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderViewController.m; sourceTree = "<group>"; };
+		90AA15C81CB640EA005C7BB4 /* PlaceOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,14 +299,10 @@
 		90A8C47D1CAA278F00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				90A8C4E11CAE44E900F17677 /* orderViewCell.h */,
-				90A8C4E21CAE44E900F17677 /* orderViewCell.m */,
-				90A8C4E31CAE44E900F17677 /* orderViewCell.xib */,
-				9041771A1CB0BCF400ED2389 /* HeadView.xib */,
-				9041771C1CB127E400ED2389 /* FootView.xib */,
-				90AA15BD1CB4AC0E005C7BB4 /* MakeTagView.h */,
-				90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */,
-				90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */,
+				90AA15C51CB63C3A005C7BB4 /* 订单页面 */,
+				90AA15C41CB63C21005C7BB4 /* 口味选择 */,
+				90AA15C31CB63C09005C7BB4 /* 表头表尾 */,
+				90AA15C21CB63BEB005C7BB4 /* 菜单列表 */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -433,6 +434,45 @@
 			path = STPopup;
 			sourceTree = "<group>";
 		};
+		90AA15C21CB63BEB005C7BB4 /* 菜单列表 */ = {
+			isa = PBXGroup;
+			children = (
+				90A8C4E11CAE44E900F17677 /* orderViewCell.h */,
+				90A8C4E21CAE44E900F17677 /* orderViewCell.m */,
+				90A8C4E31CAE44E900F17677 /* orderViewCell.xib */,
+			);
+			name = "菜单列表";
+			sourceTree = "<group>";
+		};
+		90AA15C31CB63C09005C7BB4 /* 表头表尾 */ = {
+			isa = PBXGroup;
+			children = (
+				9041771A1CB0BCF400ED2389 /* HeadView.xib */,
+				9041771C1CB127E400ED2389 /* FootView.xib */,
+			);
+			name = "表头表尾";
+			sourceTree = "<group>";
+		};
+		90AA15C41CB63C21005C7BB4 /* 口味选择 */ = {
+			isa = PBXGroup;
+			children = (
+				90AA15BD1CB4AC0E005C7BB4 /* MakeTagView.h */,
+				90AA15BE1CB4AC0E005C7BB4 /* MakeTagView.m */,
+				90AA15BF1CB4AC0E005C7BB4 /* MakeTagView.xib */,
+			);
+			name = "口味选择";
+			sourceTree = "<group>";
+		};
+		90AA15C51CB63C3A005C7BB4 /* 订单页面 */ = {
+			isa = PBXGroup;
+			children = (
+				90AA15C61CB640EA005C7BB4 /* PlaceOrderViewController.h */,
+				90AA15C71CB640EA005C7BB4 /* PlaceOrderViewController.m */,
+				90AA15C81CB640EA005C7BB4 /* PlaceOrderViewController.xib */,
+			);
+			name = "订单页面";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
+				90AA15CA1CB640EA005C7BB4 /* PlaceOrderViewController.xib in Resources */,
 				9041771B1CB0BCF400ED2389 /* HeadView.xib in Resources */,
 				90AA15C11CB4AC0E005C7BB4 /* MakeTagView.xib in Resources */,
 				90A8C4E51CAE44E900F17677 /* orderViewCell.xib in Resources */,
@@ -530,6 +571,7 @@
 				904177831CB349EA00ED2389 /* UIView+WebCacheOperation.m in Sources */,
 				90A8C4D61CAD171100F17677 /* STPopupController.m in Sources */,
 				90A8C4E41CAE44E900F17677 /* orderViewCell.m in Sources */,
+				90AA15C91CB640EA005C7BB4 /* PlaceOrderViewController.m in Sources */,
 				9041777F1CB349EA00ED2389 /* UIImage+MultiFormat.m in Sources */,
 				904177781CB349EA00ED2389 /* SDWebImageDecoder.m in Sources */,
 				904177751CB349EA00ED2389 /* NSData+ImageContentType.m in Sources */,

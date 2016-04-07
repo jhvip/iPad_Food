@@ -10,6 +10,6 @@
 
 @interface MakeTagView : UIViewController
 
-@property(nonatomic,strong)NSString *dishNo;
+@property(nonatomic,strong)NSDictionary *dishInfo;
 
 @end

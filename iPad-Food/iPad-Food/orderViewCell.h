@@ -12,7 +12,7 @@
 
 -(void)orderViewDeleteInfo:(NSString*)dishNO;
 -(void)orderViewChangeInfo:(NSString*)dishNo withNum:(NSString *)num;
--(void)orderViewMakeTag:(NSString*)dishNo;
+-(void)orderViewMakeTag:(NSDictionary*)dishInfo;
 
 @end
 

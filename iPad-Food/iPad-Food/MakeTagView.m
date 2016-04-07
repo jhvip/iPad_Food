@@ -14,11 +14,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *dishMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dishNumLabel;
+@property (weak, nonatomic) IBOutlet UITextField *otherTextField;
 
 @property (weak, nonatomic) IBOutlet UIView *tasteView;
 
 @property (weak, nonatomic) IBOutlet UIView *methodView;
 @property (weak, nonatomic) IBOutlet UIView *tabooView;
+
 
 @end
 
@@ -35,12 +37,42 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.dishNameLabel.text=[self.dishInfo objectForKey:@"name"];
+    self.dishMoneyLabel.text=[self.dishInfo objectForKey:@"acountnum"];
+    NSString *num=[self.dishInfo objectForKey:@"manynum"];
+    self.dishNumLabel.text=[NSString stringWithFormat:@"已点%@份",num];
+    NSArray *tagList=[NSArray arrayWithArray:[self.dishInfo objectForKey:@"tagList"]];
+    [self loadOldTag:tagList];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initButton];
 }
 
+#pragma mark 加载之前的设置
+-(void)loadOldTag:(NSArray*)tagList{
+    if (tagList.count==0) {
+        return;
+    }
+    NSArray *viewList=[NSArray arrayWithObjects:self.tasteView,self.methodView,self.tabooView, nil];
+    for (UIView *view in viewList) {
+        for (UIButton *but in view.subviews) {
+            for (NSString *tag in tagList) {
+                if ([but.titleLabel.text isEqualToString:tag]) {
+                    but.selected=YES;
+                    but.backgroundColor=[UIColor greenColor];
+                }
+            }
+        }
+    }
+    self.otherTextField.text=[tagList lastObject];
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -79,9 +111,9 @@
                 }
             }
         }
-        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:self.dishNo,@"dishNo",tagList,@"tagList",nil];
-        //[dic setValue:self.dishNo forKey:@"dishNo"];
-        //[dic setValue:tagList forKey:@"tagList"];
+        [tagList addObject:self.otherTextField.text];
+        NSMutableDictionary *dic=[NSMutableDictionary dictionaryWithDictionary:self.dishInfo];
+        [dic setValue:tagList forKey:@"tagList"];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"tagInfo" object:dic];
         
     }];
@@ -107,6 +139,10 @@
         sender.backgroundColor=[UIColor clearColor];
     }
 }
+
+
+
+
 
 /*
 #pragma mark - Navigation
