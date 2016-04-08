@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceOrderViewController">
@@ -16,26 +17,26 @@
             <rect key="frame" x="0.0" y="0.0" width="387" height="514"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ay-Ke-mEt">
-                    <rect key="frame" x="0.0" y="53" width="387" height="391"/>
+                <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ay-Ke-mEt">
+                    <rect key="frame" x="0.0" y="53" width="387" height="371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMP-BU-BgH">
                     <rect key="frame" x="0.0" y="0.0" width="387" height="53"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75G-qK-Shg">
-                            <rect key="frame" x="20" y="12" width="50" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75G-qK-Shg">
+                            <rect key="frame" x="20" y="12" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="IpU-xD-QHG"/>
-                                <constraint firstAttribute="width" constant="50" id="oNy-MN-g8D"/>
+                                <constraint firstAttribute="width" constant="30" id="oNy-MN-g8D"/>
                             </constraints>
-                            <state key="normal" title="返回"/>
+                            <state key="normal" image="back"/>
                             <connections>
                                 <action selector="back:" destination="-1" eventType="touchUpInside" id="NhZ-Nq-yM8"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认订单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr1-gB-LKL">
-                            <rect key="frame" x="143.5" y="12" width="100" height="30"/>
+                            <rect key="frame" x="143" y="12" width="100" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -51,13 +52,21 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-BF-nYu">
-                    <rect key="frame" x="93.5" y="464" width="200" height="30"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="96.5" y="444" width="193.5" height="50"/>
+                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="7cT-Q6-1Xd"/>
-                        <constraint firstAttribute="height" constant="30" id="tUx-Lb-ADo"/>
+                        <constraint firstAttribute="height" constant="50" id="tUx-Lb-ADo"/>
                     </constraints>
-                    <state key="normal" title="确定下单"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="确定下单">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="7cT-Q6-1Xd"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="ensureOrder:" destination="-1" eventType="touchUpInside" id="XQc-HF-jqO"/>
                     </connections>
@@ -73,6 +82,7 @@
                 <constraint firstItem="5ay-Ke-mEt" firstAttribute="top" secondItem="SMP-BU-BgH" secondAttribute="bottom" id="RMX-sz-CDL"/>
                 <constraint firstAttribute="trailing" secondItem="SMP-BU-BgH" secondAttribute="trailing" id="Vbb-NM-D3b"/>
                 <constraint firstAttribute="bottom" secondItem="iVn-BF-nYu" secondAttribute="bottom" constant="20" id="XaX-hc-l97"/>
+                <constraint firstItem="iVn-BF-nYu" firstAttribute="width" secondItem="SMP-BU-BgH" secondAttribute="width" multiplier="0.5" id="YcH-Jf-Ha6"/>
                 <constraint firstAttribute="trailing" secondItem="5ay-Ke-mEt" secondAttribute="trailing" id="ZSL-Fs-1fp"/>
                 <constraint firstAttribute="bottom" secondItem="5ay-Ke-mEt" secondAttribute="bottom" id="dzL-Le-pZ6"/>
             </constraints>
@@ -86,4 +96,7 @@
             <point key="canvasLocation" x="397.5" y="163"/>
         </view>
     </objects>
+    <resources>
+        <image name="back" width="512" height="512"/>
+    </resources>
 </document>

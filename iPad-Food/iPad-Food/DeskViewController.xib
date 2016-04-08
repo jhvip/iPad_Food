@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeskViewController">
@@ -20,17 +21,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="331" height="53"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择桌号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q4-EJ-yue">
-                            <rect key="frame" x="115.5" y="11.5" width="100" height="30"/>
+                            <rect key="frame" x="115" y="11" width="100" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-VI-6A4">
-                            <rect key="frame" x="20" y="11.5" width="50" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-VI-6A4">
+                            <rect key="frame" x="20" y="11" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="Eqp-zd-gam"/>
+                                <constraint firstAttribute="width" constant="30" id="Eqp-zd-gam"/>
+                                <constraint firstAttribute="width" secondItem="Hjk-VI-6A4" secondAttribute="height" multiplier="1:1" id="nKb-Fh-Vch"/>
                             </constraints>
-                            <state key="normal" title="返回"/>
+                            <state key="normal" image="back" backgroundImage="back"/>
                             <connections>
                                 <action selector="back:" destination="-1" eventType="touchUpInside" id="BAF-2G-tB2"/>
                             </connections>
@@ -46,7 +48,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gfz-xj-oZm">
-                    <rect key="frame" x="10" y="63" width="311" height="327"/>
+                    <rect key="frame" x="15" y="68" width="301" height="317"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yZU-np-YDr">
                         <size key="itemSize" width="50" height="50"/>
@@ -58,9 +60,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Gfz-xj-oZm" secondAttribute="trailing" constant="15" id="30T-DM-Jmp"/>
                 <constraint firstItem="Gfz-xj-oZm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3LP-f2-DB1"/>
                 <constraint firstItem="Gfz-xj-oZm" firstAttribute="top" secondItem="gV2-I1-NR5" secondAttribute="bottom" id="4Yd-pb-ycy"/>
+                <constraint firstItem="Gfz-xj-oZm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="J1z-I0-5NO"/>
+                <constraint firstItem="Gfz-xj-oZm" firstAttribute="top" secondItem="gV2-I1-NR5" secondAttribute="bottom" constant="15" id="R3V-4N-inB"/>
                 <constraint firstAttribute="bottom" secondItem="Gfz-xj-oZm" secondAttribute="bottom" id="aWm-fd-yUc"/>
+                <constraint firstAttribute="bottom" secondItem="Gfz-xj-oZm" secondAttribute="bottom" constant="15" id="cI8-Gc-XfL"/>
                 <constraint firstAttribute="trailing" secondItem="Gfz-xj-oZm" secondAttribute="trailing" id="efd-1R-2bW"/>
                 <constraint firstAttribute="trailing" secondItem="gV2-I1-NR5" secondAttribute="trailing" id="fcw-EP-xQp"/>
                 <constraint firstItem="Gfz-xj-oZm" firstAttribute="top" secondItem="gV2-I1-NR5" secondAttribute="bottom" constant="10" id="knQ-gS-cXZ"/>
@@ -78,9 +84,16 @@
                     <exclude reference="4Yd-pb-ycy"/>
                     <exclude reference="aWm-fd-yUc"/>
                     <exclude reference="efd-1R-2bW"/>
+                    <exclude reference="knQ-gS-cXZ"/>
+                    <exclude reference="tab-iH-qz3"/>
+                    <exclude reference="wwr-4Z-XV1"/>
+                    <exclude reference="ymf-gG-EJL"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="311.5" y="-210"/>
         </view>
     </objects>
+    <resources>
+        <image name="back" width="512" height="512"/>
+    </resources>
 </document>

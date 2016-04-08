@@ -64,7 +64,7 @@
             for (NSString *tag in tagList) {
                 if ([but.titleLabel.text isEqualToString:tag]) {
                     but.selected=YES;
-                    but.backgroundColor=[UIColor greenColor];
+                    but.backgroundColor=[UIColor colorWithRed:0.4f green:0.8f blue:1.0f alpha:1.0f];
                 }
             }
         }
@@ -83,7 +83,7 @@
     NSArray *viewList=[NSArray arrayWithObjects:self.tasteView,self.methodView,self.tabooView, nil];
     for (UIView *view in viewList) {
         for (UIButton *but in view.subviews) {
-            [but.layer setBorderColor:[UIColor blackColor].CGColor];
+            [but.layer setBorderColor:[UIColor colorWithRed:0.4f green:0.8f blue:1.0f alpha:1.0f].CGColor];
             [but.layer setBorderWidth:1];
             [but.layer setCornerRadius:5];
             [but.layer setMasksToBounds:YES];
@@ -126,7 +126,7 @@
         but.selected=NO;
         but.backgroundColor=[UIColor clearColor];
     }
-    sender.backgroundColor=[UIColor greenColor];
+    sender.backgroundColor=[UIColor colorWithRed:0.4f green:0.8f blue:1.0f alpha:1.0f];
     sender.selected=YES;
 }
 
@@ -134,7 +134,7 @@
     
     sender.selected=!sender.selected;
     if (sender.selected) {
-        sender.backgroundColor=[UIColor greenColor];
+        sender.backgroundColor=[UIColor colorWithRed:0.4f green:0.8f blue:1.0f alpha:1.0f];
     }else{
         sender.backgroundColor=[UIColor clearColor];
     }

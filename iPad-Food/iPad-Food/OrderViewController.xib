@@ -96,39 +96,50 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyn-yb-UDr">
                                     <rect key="frame" x="10" y="183" width="159.5" height="49"/>
-                                    <color key="backgroundColor" red="1" green="0.28605154002733479" blue="0.38887495507068137" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="返回点餐"/>
+                                    <state key="normal" title="返回点餐">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="backIndex:" destination="-1" eventType="touchUpInside" id="Raf-l7-Agd"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHj-mz-v0e">
                                     <rect key="frame" x="10" y="-133" width="159.5" height="49"/>
-                                    <color key="backgroundColor" red="1" green="0.39062568110000001" blue="0.41905228709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="餐桌变更"/>
+                                    <state key="normal" title="餐桌变更">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="selectDesk:" destination="-1" eventType="touchUpInside" id="N4X-tI-Ejk"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJF-Ps-vt3">
                                     <rect key="frame" x="10" y="25" width="159.5" height="49"/>
-                                    <color key="backgroundColor" red="1" green="0.39062568110000001" blue="0.41905228709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="退单"/>
+                                    <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="退单">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgh-lJ-PWM">
                                     <rect key="frame" x="10" y="104" width="159.5" height="49"/>
-                                    <color key="backgroundColor" red="1" green="0.39062568110000001" blue="0.41905228709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="保留备注"/>
+                                    <state key="normal" title="保留备注">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-jc-wVQ">
                                     <rect key="frame" x="10" y="-54" width="159.5" height="49"/>
-                                    <color key="backgroundColor" red="1" green="0.39062568110000001" blue="0.41905228709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="下单"/>
+                                    <state key="normal" title="下单">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="placeOrder:" destination="-1" eventType="touchUpInside" id="KWV-np-OaO"/>
                                     </connections>
@@ -204,7 +215,7 @@
                             <rect key="frame" x="0.0" y="219.5" width="179.5" height="38"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyf-Cs-TX7">
-                                    <rect key="frame" x="19" y="4" width="75" height="30"/>
+                                    <rect key="frame" x="50" y="4" width="75" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="Qed-1Q-kOP"/>
                                     </constraints>
@@ -213,7 +224,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqK-yN-WyI">
-                                    <rect key="frame" x="115" y="4" width="50" height="30"/>
+                                    <rect key="frame" x="135" y="4" width="50" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Sv4-Af-aJL"/>
                                     </constraints>
@@ -222,17 +233,17 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-Nf-2OV">
-                                    <rect key="frame" x="170" y="4" width="25" height="30"/>
+                                    <rect key="frame" x="190" y="4" width="25" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.95308157623656553" blue="0.37482658894126553" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="eqK-yN-WyI" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="P8p-hz-Eyw"/>
-                                <constraint firstItem="Jyf-Cs-TX7" firstAttribute="leading" secondItem="2iN-Wh-e8P" secondAttribute="leading" constant="19" id="RAe-5d-hMj"/>
-                                <constraint firstItem="eqK-yN-WyI" firstAttribute="leading" secondItem="Jyf-Cs-TX7" secondAttribute="trailing" constant="21" id="gzj-Cj-Bnu"/>
+                                <constraint firstItem="Jyf-Cs-TX7" firstAttribute="leading" secondItem="2iN-Wh-e8P" secondAttribute="leading" constant="50" id="RAe-5d-hMj"/>
+                                <constraint firstItem="eqK-yN-WyI" firstAttribute="leading" secondItem="Jyf-Cs-TX7" secondAttribute="trailing" constant="10" id="gzj-Cj-Bnu"/>
                                 <constraint firstAttribute="height" constant="38" id="jpE-zG-h9t"/>
                                 <constraint firstItem="M9a-Nf-2OV" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="obU-Me-IPm"/>
                                 <constraint firstItem="Jyf-Cs-TX7" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="q5Y-uh-zjW"/>
