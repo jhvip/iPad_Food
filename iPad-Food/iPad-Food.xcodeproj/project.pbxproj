@@ -25,6 +25,10 @@
 		904177811CB349EA00ED2389 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9041776F1CB349EA00ED2389 /* UIImageView+HighlightedWebCache.m */; };
 		904177821CB349EA00ED2389 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 904177711CB349EA00ED2389 /* UIImageView+WebCache.m */; };
 		904177831CB349EA00ED2389 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 904177731CB349EA00ED2389 /* UIView+WebCacheOperation.m */; };
+		904DCCD01CB7410A001E4E30 /* DeskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 904DCCCE1CB7410A001E4E30 /* DeskViewController.m */; };
+		904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCCF1CB7410A001E4E30 /* DeskViewController.xib */; };
+		904DCCD51CB74432001E4E30 /* DeskCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */; };
+		904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */; };
 		90A8C4631CAA269C00F17677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4621CAA269C00F17677 /* main.m */; };
 		90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4651CAA269C00F17677 /* AppDelegate.m */; };
 		90A8C4691CAA269C00F17677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4681CAA269C00F17677 /* ViewController.m */; };
@@ -98,6 +102,12 @@
 		904177711CB349EA00ED2389 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		904177721CB349EA00ED2389 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		904177731CB349EA00ED2389 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		904DCCCD1CB7410A001E4E30 /* DeskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeskViewController.h; sourceTree = "<group>"; };
+		904DCCCE1CB7410A001E4E30 /* DeskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeskViewController.m; sourceTree = "<group>"; };
+		904DCCCF1CB7410A001E4E30 /* DeskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeskViewController.xib; sourceTree = "<group>"; };
+		904DCCD21CB74432001E4E30 /* DeskCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeskCollectionCell.h; sourceTree = "<group>"; };
+		904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeskCollectionCell.m; sourceTree = "<group>"; };
+		904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeskCollectionCell.xib; sourceTree = "<group>"; };
 		90A8C45E1CAA269C00F17677 /* iPad-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPad-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A8C4621CAA269C00F17677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90A8C4641CAA269C00F17677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +223,27 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		904DCCCB1CB740C9001E4E30 /* 桌号选择 */ = {
+			isa = PBXGroup;
+			children = (
+				904DCCCC1CB740D5001E4E30 /* 桌号Cell */,
+				904DCCCD1CB7410A001E4E30 /* DeskViewController.h */,
+				904DCCCE1CB7410A001E4E30 /* DeskViewController.m */,
+				904DCCCF1CB7410A001E4E30 /* DeskViewController.xib */,
+			);
+			name = "桌号选择";
+			sourceTree = "<group>";
+		};
+		904DCCCC1CB740D5001E4E30 /* 桌号Cell */ = {
+			isa = PBXGroup;
+			children = (
+				904DCCD21CB74432001E4E30 /* DeskCollectionCell.h */,
+				904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */,
+				904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */,
+			);
+			name = "桌号Cell";
+			sourceTree = "<group>";
+		};
 		90A8C4551CAA269C00F17677 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +337,7 @@
 		90A8C47D1CAA278F00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				904DCCCB1CB740C9001E4E30 /* 桌号选择 */,
 				90AA15C51CB63C3A005C7BB4 /* 订单页面 */,
 				90AA15C41CB63C21005C7BB4 /* 口味选择 */,
 				90AA15C31CB63C09005C7BB4 /* 表头表尾 */,
@@ -550,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
+				904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */,
 				90AA15CA1CB640EA005C7BB4 /* PlaceOrderViewController.xib in Resources */,
 				9041771B1CB0BCF400ED2389 /* HeadView.xib in Resources */,
 				90AA15C11CB4AC0E005C7BB4 /* MakeTagView.xib in Resources */,
@@ -558,6 +591,7 @@
 				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
 				90AA15D31CB64FA1005C7BB4 /* PlaceOrderFootView.xib in Resources */,
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
+				904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */,
 				9041771D1CB127E400ED2389 /* FootView.xib in Resources */,
 				90AA15D11CB64426005C7BB4 /* PlaceOrderViewCell.xib in Resources */,
 				90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */,
@@ -578,7 +612,9 @@
 				9041777B1CB349EA00ED2389 /* SDWebImageManager.m in Sources */,
 				904177771CB349EA00ED2389 /* SDWebImageCompat.m in Sources */,
 				9041777C1CB349EA00ED2389 /* SDWebImagePrefetcher.m in Sources */,
+				904DCCD01CB7410A001E4E30 /* DeskViewController.m in Sources */,
 				90A8C4BF1CACC93600F17677 /* AFNetworkReachabilityManager.m in Sources */,
+				904DCCD51CB74432001E4E30 /* DeskCollectionCell.m in Sources */,
 				904177761CB349EA00ED2389 /* SDImageCache.m in Sources */,
 				90A8C4AC1CACC65100F17677 /* DishViewCell.m in Sources */,
 				9041777D1CB349EA00ED2389 /* UIButton+WebCache.m in Sources */,

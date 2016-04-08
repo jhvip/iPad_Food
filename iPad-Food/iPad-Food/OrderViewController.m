@@ -13,6 +13,7 @@
 #import "STPopup.h"
 #import "MakeTagView.h"
 #import "PlaceOrderViewController.h"
+#import "DeskViewController.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
@@ -22,6 +23,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *dishImage;
+@property (weak, nonatomic) IBOutlet UILabel *deskNumLabel;
 
 @end
 
@@ -262,6 +264,8 @@
            selector:@selector(setTag:)
                name:@"tagInfo"
              object:nil];
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.deskNumLabel.text=[ud objectForKey:@"deskNum"];
     
 }
 
@@ -278,7 +282,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
+#pragma mark 下订单
 - (IBAction)placeOrder:(UIButton *)sender {
     PlaceOrderViewController *view=[[PlaceOrderViewController alloc]init];
     view.orderList=self.orderList;
@@ -287,9 +291,17 @@
     placeOrderView.transitionStyle = STPopupTransitionStyleFade;
     placeOrderView.navigationBarHidden=YES;
     [placeOrderView presentInViewController:self];
-    
 }
-
+#pragma mark 选择桌号
+- (IBAction)selectDesk:(UIButton *)sender {
+    DeskViewController *view=[[DeskViewController alloc]init];
+    //view.orderList=self.orderList;
+    STPopupController *DeskView=[[STPopupController alloc]initWithRootViewController:view];
+    DeskView.containerView.layer.cornerRadius = 6;
+    DeskView.transitionStyle = STPopupTransitionStyleFade;
+    DeskView.navigationBarHidden=YES;
+    [DeskView presentInViewController:self];
+}
 
 /*
 #pragma mark - Navigation
