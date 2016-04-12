@@ -14,6 +14,7 @@
 #import "MakeTagView.h"
 #import "PlaceOrderViewController.h"
 #import "DeskViewController.h"
+#import "MyOrderViewController.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
@@ -40,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self loadInfo];
+    
     [self loadTableView];
     if (self.orderList.count==0) {
         self.tableView.sectionFooterHeight=0;
@@ -126,8 +127,6 @@
     [alert addAction:makeButton];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
-    
     
     
 }
@@ -266,6 +265,11 @@
              object:nil];
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     self.deskNumLabel.text=[ud objectForKey:@"deskNum"];
+    [self.orderList removeAllObjects];
+    
+    [self loadInfo];
+    self.tableView.sectionFooterHeight=0;
+    [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
 }
 
@@ -284,24 +288,55 @@
 
 #pragma mark 下订单
 - (IBAction)placeOrder:(UIButton *)sender {
-    PlaceOrderViewController *view=[[PlaceOrderViewController alloc]init];
-    view.orderList=self.orderList;
-    STPopupController *placeOrderView=[[STPopupController alloc]initWithRootViewController:view];
-    placeOrderView.containerView.layer.cornerRadius = 6;
-    placeOrderView.transitionStyle = STPopupTransitionStyleFade;
-    placeOrderView.navigationBarHidden=YES;
-    [placeOrderView presentInViewController:self];
+    
+    if (self.orderList.count==0) {
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"下单失败" message:@"您的当前菜单为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        PlaceOrderViewController *view=[[PlaceOrderViewController alloc]init];
+        view.orderList=self.orderList;
+        STPopupController *placeOrderView=[[STPopupController alloc]initWithRootViewController:view];
+        placeOrderView.containerView.layer.cornerRadius = 6;
+        placeOrderView.transitionStyle = STPopupTransitionStyleFade;
+        placeOrderView.navigationBarHidden=YES;
+        [placeOrderView presentInViewController:self];
+    }
+    
 }
 #pragma mark 选择桌号
 - (IBAction)selectDesk:(UIButton *)sender {
     DeskViewController *view=[[DeskViewController alloc]init];
-    //view.orderList=self.orderList;
+    
     STPopupController *DeskView=[[STPopupController alloc]initWithRootViewController:view];
     DeskView.containerView.layer.cornerRadius = 6;
     DeskView.transitionStyle = STPopupTransitionStyleFade;
     DeskView.navigationBarHidden=YES;
     [DeskView presentInViewController:self];
 }
+
+//我的订单
+- (IBAction)showOrder:(id)sender {
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSArray *orderList=[ud objectForKey:@"orderList"];
+    
+    MyOrderViewController *view=[[MyOrderViewController alloc]init];
+    view.myOrderList=orderList;
+    STPopupController *orderView=[[STPopupController alloc]initWithRootViewController:view];
+    orderView.containerView.layer.cornerRadius = 6;
+    orderView.transitionStyle = STPopupTransitionStyleFade;
+    orderView.navigationBarHidden=YES;
+    [orderView presentInViewController:self];
+    
+}
+
 
 /*
 #pragma mark - Navigation

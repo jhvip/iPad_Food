@@ -129,9 +129,12 @@
                                     <rect key="frame" x="10" y="104" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <state key="normal" title="保留备注">
+                                    <state key="normal" title="我的订单">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="showOrder:" destination="-1" eventType="touchUpInside" id="8cl-7C-SQv"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-jc-wVQ">
                                     <rect key="frame" x="10" y="-54" width="159.5" height="49"/>

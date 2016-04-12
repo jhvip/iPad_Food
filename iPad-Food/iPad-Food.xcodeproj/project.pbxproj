@@ -29,6 +29,10 @@
 		904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCCF1CB7410A001E4E30 /* DeskViewController.xib */; };
 		904DCCD51CB74432001E4E30 /* DeskCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */; };
 		904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */; };
+		907E35F41CBCDE31001AFA5A /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */; };
+		907E35F51CBCDE31001AFA5A /* MyOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */; };
+		907E35FB1CBCE364001AFA5A /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35F91CBCE364001AFA5A /* MyOrderCell.m */; };
+		907E35FC1CBCE364001AFA5A /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */; };
 		90A8C4631CAA269C00F17677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4621CAA269C00F17677 /* main.m */; };
 		90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4651CAA269C00F17677 /* AppDelegate.m */; };
 		90A8C4691CAA269C00F17677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4681CAA269C00F17677 /* ViewController.m */; };
@@ -108,6 +112,12 @@
 		904DCCD21CB74432001E4E30 /* DeskCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeskCollectionCell.h; sourceTree = "<group>"; };
 		904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeskCollectionCell.m; sourceTree = "<group>"; };
 		904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeskCollectionCell.xib; sourceTree = "<group>"; };
+		907E35F11CBCDE31001AFA5A /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderViewController.xib; sourceTree = "<group>"; };
+		907E35F81CBCE364001AFA5A /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
+		907E35F91CBCE364001AFA5A /* MyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCell.m; sourceTree = "<group>"; };
+		907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
 		90A8C45E1CAA269C00F17677 /* iPad-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPad-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A8C4621CAA269C00F17677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90A8C4641CAA269C00F17677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +254,27 @@
 			name = "桌号Cell";
 			sourceTree = "<group>";
 		};
+		907E35F01CBCD6C2001AFA5A /* 我的订单 */ = {
+			isa = PBXGroup;
+			children = (
+				907E35F61CBCE072001AFA5A /* 我的订单cell */,
+				907E35F11CBCDE31001AFA5A /* MyOrderViewController.h */,
+				907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */,
+				907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */,
+			);
+			name = "我的订单";
+			sourceTree = "<group>";
+		};
+		907E35F61CBCE072001AFA5A /* 我的订单cell */ = {
+			isa = PBXGroup;
+			children = (
+				907E35F81CBCE364001AFA5A /* MyOrderCell.h */,
+				907E35F91CBCE364001AFA5A /* MyOrderCell.m */,
+				907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */,
+			);
+			name = "我的订单cell";
+			sourceTree = "<group>";
+		};
 		90A8C4551CAA269C00F17677 = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +368,7 @@
 		90A8C47D1CAA278F00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				907E35F01CBCD6C2001AFA5A /* 我的订单 */,
 				904DCCCB1CB740C9001E4E30 /* 桌号选择 */,
 				90AA15C51CB63C3A005C7BB4 /* 订单页面 */,
 				90AA15C41CB63C21005C7BB4 /* 口味选择 */,
@@ -581,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907E35FC1CBCE364001AFA5A /* MyOrderCell.xib in Resources */,
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
 				904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */,
 				90AA15CA1CB640EA005C7BB4 /* PlaceOrderViewController.xib in Resources */,
@@ -590,6 +623,7 @@
 				90A8C4AD1CACC65100F17677 /* DishViewCell.xib in Resources */,
 				90A8C4C91CAD163700F17677 /* DishDetailViewController.xib in Resources */,
 				90AA15D31CB64FA1005C7BB4 /* PlaceOrderFootView.xib in Resources */,
+				907E35F51CBCDE31001AFA5A /* MyOrderViewController.xib in Resources */,
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
 				904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */,
 				9041771D1CB127E400ED2389 /* FootView.xib in Resources */,
@@ -609,6 +643,7 @@
 			files = (
 				904177811CB349EA00ED2389 /* UIImageView+HighlightedWebCache.m in Sources */,
 				90A8C48A1CAA287C00F17677 /* LoginViewController.m in Sources */,
+				907E35FB1CBCE364001AFA5A /* MyOrderCell.m in Sources */,
 				9041777B1CB349EA00ED2389 /* SDWebImageManager.m in Sources */,
 				904177771CB349EA00ED2389 /* SDWebImageCompat.m in Sources */,
 				9041777C1CB349EA00ED2389 /* SDWebImagePrefetcher.m in Sources */,
@@ -634,6 +669,7 @@
 				904177751CB349EA00ED2389 /* NSData+ImageContentType.m in Sources */,
 				90A8C4D71CAD171100F17677 /* STPopupLeftBarItem.m in Sources */,
 				9041777A1CB349EA00ED2389 /* SDWebImageDownloaderOperation.m in Sources */,
+				907E35F41CBCDE31001AFA5A /* MyOrderViewController.m in Sources */,
 				904177741CB349EA00ED2389 /* MKAnnotationView+WebCache.m in Sources */,
 				90A8C4DA1CAD171100F17677 /* UIViewController+STPopup.m in Sources */,
 				90A8C4631CAA269C00F17677 /* main.m in Sources */,

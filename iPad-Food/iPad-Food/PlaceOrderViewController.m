@@ -9,6 +9,7 @@
 #import "PlaceOrderViewController.h"
 #import "STPopup.h"
 #import "PlaceOrderViewCell.h"
+#import "AFNetworking.h"
 @interface PlaceOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSString *sumMoney;
@@ -65,6 +66,9 @@
     for (UILabel *sumMoney in footView.subviews) {
         sumMoney.text=[NSString stringWithFormat:@"总计:%@元",self.sumMoney];
     }
+    if (self.orderList.count==0) {
+        self.tableView.hidden=YES;
+    }
     return footView;
 }
 
@@ -79,6 +83,49 @@
 }
 
 - (IBAction)ensureOrder:(id)sender {
+    
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"确认下单" message:@"是否确认下单？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *canelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *submitButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self submitOrder];
+    }];
+    [alert addAction:canelButton];
+    [alert addAction:submitButton];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
+    
+}
+
+-(void)submitOrder{
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSString *tabel_no=[ud objectForKey:@"deskNum"];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.orderList options:NSJSONWritingPrettyPrinted error:&error];//此处data参数是我上面提到的key为"data"的数组
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *param=@{@"table_no":tabel_no,
+                          @"info":jsonString,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage POST:SubmitMenuURL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"status"]isEqualToString:@"success"]) {
+            self.orderList=@[];
+            NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+            [ud setObject:nil forKey:@"dishes"];
+            NSMutableArray *orderList=[NSMutableArray arrayWithArray:[ud objectForKey:@"orderList"]];
+            [orderList addObject:[responseObject objectForKey:@"message"]];
+            [ud setObject:orderList forKey:@"orderList"];
+            
+            [self.tableView reloadData];
+            [self back:nil];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error");
+    }];
+    
 }
 
 /*

@@ -37,9 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self showTableView:self.firstButton];
     [self loadTableView];
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self showTableView:self.firstButton];
 }
 
 - (void)didReceiveMemoryWarning {
