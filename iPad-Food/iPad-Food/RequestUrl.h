@@ -21,5 +21,10 @@
 
 //提交订单
 #define SubmitMenuURL [NSString stringWithFormat:@"http://%@/DishMenuServlet",ip]
+//查看当前订单
+#define searchOrderURL [NSString stringWithFormat:@"http://%@/DishSearchOrder",ip]
+//查看菜单详情
+#define OrderDetailURL [NSString stringWithFormat:@"http://%@/OrderDetailServlet",ip]
+
 
 #endif /* RequestUrl_h */

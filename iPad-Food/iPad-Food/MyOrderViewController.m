@@ -9,12 +9,23 @@
 #import "MyOrderViewController.h"
 #import "STPopup.h"
 #import "MyOrderCell.h"
+#import "AFNetworking.h"
+#import "MyOrderModel.h"
+#import "OrderdetailViewController.h"
 @interface MyOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *orderInfoList;
 
 @end
 
 @implementation MyOrderViewController
+
+-(NSMutableArray *)orderInfoList{
+    if (_orderInfoList==nil) {
+        _orderInfoList=[NSMutableArray array];
+    }
+    return _orderInfoList;
+}
 
 - (instancetype)init
 {
@@ -26,9 +37,11 @@
     return self;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self searchOrder];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     self.tableView.rowHeight=80;
@@ -51,13 +64,49 @@
     if (!cell) {
         cell=[[MyOrderCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyOrderCell"];
     }
-    [cell setMyOrderCell:self.myOrderList[indexPath.row]];
+    [cell setMyOrderCell:self.orderInfoList[indexPath.row]];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.myOrderList.count;
+    return self.orderInfoList.count;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MyOrderCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+    
+    OrderdetailViewController *view=[[OrderdetailViewController alloc]init];
+    view.orderInfo=cell.orderInfo;
+    [self.popupController pushViewController:view animated:YES];
+    
+}
+
+
+-(void)searchOrder{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.myOrderList options:NSJSONWritingPrettyPrinted error:&error];//此处data参数是我上面提到的key为"data"的数组
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *param=@{@"orderList":jsonString,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage POST:searchOrderURL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *list=responseObject;
+        for (NSDictionary *dic in list) {
+            MyOrderModel *orderInfo=[[MyOrderModel alloc]init];
+            orderInfo.orderMoney=[dic objectForKey:@"menu_money"];
+            orderInfo.orderNum=[dic objectForKey:@"menu_num"];
+            orderInfo.orderServed=[dic objectForKey:@"served"];
+            orderInfo.orderTime=[dic objectForKey:@"menutime"];
+            [self.orderInfoList insertObject:orderInfo atIndex:0];
+        }
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error");
+    }];
+}
+
 
 
 

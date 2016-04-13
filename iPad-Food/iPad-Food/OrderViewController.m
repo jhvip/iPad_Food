@@ -288,6 +288,18 @@
 
 #pragma mark 下订单
 - (IBAction)placeOrder:(UIButton *)sender {
+    if (self.deskNumLabel.text==nil) {
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"下单失败" message:@"您还没有选择桌号" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"选桌号" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self selectDesk:[[UIButton alloc]init]];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
     if (self.orderList.count==0) {
         UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"下单失败" message:@"您的当前菜单为空" preferredStyle:UIAlertControllerStyleAlert];
@@ -327,13 +339,30 @@
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     NSArray *orderList=[ud objectForKey:@"orderList"];
     
-    MyOrderViewController *view=[[MyOrderViewController alloc]init];
-    view.myOrderList=orderList;
-    STPopupController *orderView=[[STPopupController alloc]initWithRootViewController:view];
-    orderView.containerView.layer.cornerRadius = 6;
-    orderView.transitionStyle = STPopupTransitionStyleFade;
-    orderView.navigationBarHidden=YES;
-    [orderView presentInViewController:self];
+    
+    if (orderList.count==0) {
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"查看失败" message:@"您的当前菜单为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        MyOrderViewController *view=[[MyOrderViewController alloc]init];
+        view.myOrderList=orderList;
+        STPopupController *orderView=[[STPopupController alloc]initWithRootViewController:view];
+        orderView.containerView.layer.cornerRadius = 6;
+        orderView.transitionStyle = STPopupTransitionStyleFade;
+        orderView.navigationBarHidden=YES;
+        [orderView presentInViewController:self];
+    }
+    
+    
+   
     
 }
 

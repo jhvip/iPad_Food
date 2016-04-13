@@ -107,6 +107,7 @@
     
     NSDictionary *param=@{@"table_no":tabel_no,
                           @"info":jsonString,
+                          @"sumMoney":[self sumMoney],
                           };
     AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
     [manage POST:SubmitMenuURL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

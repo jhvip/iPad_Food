@@ -7,7 +7,7 @@
 //
 
 #import "MyOrderCell.h"
-
+#import "MyOrderModel.h"
 @interface MyOrderCell()
 @property (weak, nonatomic) IBOutlet UILabel *orderNumLabel;
 
@@ -29,8 +29,16 @@
     // Configure the view for the selected state
 }
 
--(void)setMyOrderCell:(NSString *)info{
-    self.orderNumLabel.text=info;
+-(void)setMyOrderCell:(MyOrderModel *)info{
+    self.orderNumLabel.text=info.orderNum;
+    self.orderMoney.text=[NSString stringWithFormat:@"%@元",info.orderMoney];
+    self.orderTimeLabel.text=info.orderTime;
+    if ([info.orderServed isEqualToString:@"0"]) {
+        self.orderStatusLabel.text=@"未支付";
+    }else{
+        self.orderStatusLabel.text=@"已支付";
+    }
+    self.orderInfo=info;
 }
 
 

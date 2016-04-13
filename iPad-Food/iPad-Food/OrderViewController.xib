@@ -63,9 +63,12 @@
                         <constraint firstItem="TfW-rJ-eto" firstAttribute="centerX" secondItem="7CI-q9-H1D" secondAttribute="centerX" id="bEJ-Nn-05h"/>
                         <constraint firstItem="TfW-rJ-eto" firstAttribute="centerY" secondItem="7CI-q9-H1D" secondAttribute="centerY" id="eC4-JJ-uWV"/>
                         <constraint firstItem="N2b-9o-igL" firstAttribute="top" secondItem="7CI-q9-H1D" secondAttribute="top" id="euU-rO-hOR"/>
+                        <constraint firstItem="PIp-QB-u1b" firstAttribute="bottom" secondItem="TfW-rJ-eto" secondAttribute="bottom" id="sgx-7j-DVR"/>
+                        <constraint firstAttribute="trailing" secondItem="PIp-QB-u1b" secondAttribute="trailing" priority="800" constant="106" id="x7V-k7-m8X"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="x7V-k7-m8X"/>
                             <exclude reference="Qbk-jH-Ek4"/>
                         </mask>
                     </variation>

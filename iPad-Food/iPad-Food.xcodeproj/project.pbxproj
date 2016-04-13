@@ -33,6 +33,12 @@
 		907E35F51CBCDE31001AFA5A /* MyOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */; };
 		907E35FB1CBCE364001AFA5A /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35F91CBCE364001AFA5A /* MyOrderCell.m */; };
 		907E35FC1CBCE364001AFA5A /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */; };
+		907E36001CBDDBF3001AFA5A /* MyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35FF1CBDDBF3001AFA5A /* MyOrderModel.m */; };
+		907E36051CBDEAED001AFA5A /* OrderdetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E36031CBDEAED001AFA5A /* OrderdetailViewController.m */; };
+		907E36061CBDEAED001AFA5A /* OrderdetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E36041CBDEAED001AFA5A /* OrderdetailViewController.xib */; };
+		907E360B1CBDEB2B001AFA5A /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E36091CBDEB2B001AFA5A /* OrderDetailCell.m */; };
+		907E360C1CBDEB2B001AFA5A /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E360A1CBDEB2B001AFA5A /* OrderDetailCell.xib */; };
+		907E360E1CBDF1ED001AFA5A /* OrderDetailHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E360D1CBDF1ED001AFA5A /* OrderDetailHead.xib */; };
 		90A8C4631CAA269C00F17677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4621CAA269C00F17677 /* main.m */; };
 		90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4651CAA269C00F17677 /* AppDelegate.m */; };
 		90A8C4691CAA269C00F17677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4681CAA269C00F17677 /* ViewController.m */; };
@@ -118,6 +124,15 @@
 		907E35F81CBCE364001AFA5A /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
 		907E35F91CBCE364001AFA5A /* MyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCell.m; sourceTree = "<group>"; };
 		907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		907E35FE1CBDDBF3001AFA5A /* MyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderModel.h; sourceTree = "<group>"; };
+		907E35FF1CBDDBF3001AFA5A /* MyOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderModel.m; sourceTree = "<group>"; };
+		907E36021CBDEAED001AFA5A /* OrderdetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderdetailViewController.h; sourceTree = "<group>"; };
+		907E36031CBDEAED001AFA5A /* OrderdetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderdetailViewController.m; sourceTree = "<group>"; };
+		907E36041CBDEAED001AFA5A /* OrderdetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderdetailViewController.xib; sourceTree = "<group>"; };
+		907E36081CBDEB2B001AFA5A /* OrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailCell.h; sourceTree = "<group>"; };
+		907E36091CBDEB2B001AFA5A /* OrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
+		907E360A1CBDEB2B001AFA5A /* OrderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		907E360D1CBDF1ED001AFA5A /* OrderDetailHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailHead.xib; sourceTree = "<group>"; };
 		90A8C45E1CAA269C00F17677 /* iPad-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPad-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A8C4621CAA269C00F17677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90A8C4641CAA269C00F17677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -257,6 +272,7 @@
 		907E35F01CBCD6C2001AFA5A /* 我的订单 */ = {
 			isa = PBXGroup;
 			children = (
+				907E35FD1CBDDBCD001AFA5A /* 我的订单model */,
 				907E35F61CBCE072001AFA5A /* 我的订单cell */,
 				907E35F11CBCDE31001AFA5A /* MyOrderViewController.h */,
 				907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */,
@@ -273,6 +289,37 @@
 				907E35FA1CBCE364001AFA5A /* MyOrderCell.xib */,
 			);
 			name = "我的订单cell";
+			sourceTree = "<group>";
+		};
+		907E35FD1CBDDBCD001AFA5A /* 我的订单model */ = {
+			isa = PBXGroup;
+			children = (
+				907E35FE1CBDDBF3001AFA5A /* MyOrderModel.h */,
+				907E35FF1CBDDBF3001AFA5A /* MyOrderModel.m */,
+			);
+			name = "我的订单model";
+			sourceTree = "<group>";
+		};
+		907E36011CBDEAC3001AFA5A /* 订单详情 */ = {
+			isa = PBXGroup;
+			children = (
+				907E36071CBDEAF3001AFA5A /* 订单详情cell */,
+				907E36021CBDEAED001AFA5A /* OrderdetailViewController.h */,
+				907E36031CBDEAED001AFA5A /* OrderdetailViewController.m */,
+				907E36041CBDEAED001AFA5A /* OrderdetailViewController.xib */,
+			);
+			name = "订单详情";
+			sourceTree = "<group>";
+		};
+		907E36071CBDEAF3001AFA5A /* 订单详情cell */ = {
+			isa = PBXGroup;
+			children = (
+				907E36081CBDEB2B001AFA5A /* OrderDetailCell.h */,
+				907E36091CBDEB2B001AFA5A /* OrderDetailCell.m */,
+				907E360A1CBDEB2B001AFA5A /* OrderDetailCell.xib */,
+				907E360D1CBDF1ED001AFA5A /* OrderDetailHead.xib */,
+			);
+			name = "订单详情cell";
 			sourceTree = "<group>";
 		};
 		90A8C4551CAA269C00F17677 = {
@@ -368,6 +415,7 @@
 		90A8C47D1CAA278F00F17677 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				907E36011CBDEAC3001AFA5A /* 订单详情 */,
 				907E35F01CBCD6C2001AFA5A /* 我的订单 */,
 				904DCCCB1CB740C9001E4E30 /* 桌号选择 */,
 				90AA15C51CB63C3A005C7BB4 /* 订单页面 */,
@@ -615,6 +663,7 @@
 			files = (
 				907E35FC1CBCE364001AFA5A /* MyOrderCell.xib in Resources */,
 				90A8C4DF1CAE19EC00F17677 /* OrderViewController.xib in Resources */,
+				907E36061CBDEAED001AFA5A /* OrderdetailViewController.xib in Resources */,
 				904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */,
 				90AA15CA1CB640EA005C7BB4 /* PlaceOrderViewController.xib in Resources */,
 				9041771B1CB0BCF400ED2389 /* HeadView.xib in Resources */,
@@ -627,8 +676,10 @@
 				90A8C4711CAA269C00F17677 /* LaunchScreen.storyboard in Resources */,
 				904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */,
 				9041771D1CB127E400ED2389 /* FootView.xib in Resources */,
+				907E360C1CBDEB2B001AFA5A /* OrderDetailCell.xib in Resources */,
 				90AA15D11CB64426005C7BB4 /* PlaceOrderViewCell.xib in Resources */,
 				90A8C46E1CAA269C00F17677 /* Assets.xcassets in Resources */,
+				907E360E1CBDF1ED001AFA5A /* OrderDetailHead.xib in Resources */,
 				90A8C46C1CAA269C00F17677 /* Main.storyboard in Resources */,
 				90A8C4871CAA282400F17677 /* LoginStoryboard.storyboard in Resources */,
 			);
@@ -655,6 +706,7 @@
 				9041777D1CB349EA00ED2389 /* UIButton+WebCache.m in Sources */,
 				90A8C4691CAA269C00F17677 /* ViewController.m in Sources */,
 				90A8C4661CAA269C00F17677 /* AppDelegate.m in Sources */,
+				907E36051CBDEAED001AFA5A /* OrderdetailViewController.m in Sources */,
 				904177801CB349EA00ED2389 /* UIImage+WebP.m in Sources */,
 				90A8C4C01CACC93600F17677 /* AFSecurityPolicy.m in Sources */,
 				90A8C4C11CACC93600F17677 /* AFURLRequestSerialization.m in Sources */,
@@ -665,6 +717,7 @@
 				90A8C4E41CAE44E900F17677 /* orderViewCell.m in Sources */,
 				90AA15C91CB640EA005C7BB4 /* PlaceOrderViewController.m in Sources */,
 				9041777F1CB349EA00ED2389 /* UIImage+MultiFormat.m in Sources */,
+				907E360B1CBDEB2B001AFA5A /* OrderDetailCell.m in Sources */,
 				904177781CB349EA00ED2389 /* SDWebImageDecoder.m in Sources */,
 				904177751CB349EA00ED2389 /* NSData+ImageContentType.m in Sources */,
 				90A8C4D71CAD171100F17677 /* STPopupLeftBarItem.m in Sources */,
@@ -677,6 +730,7 @@
 				90AA15D01CB64426005C7BB4 /* PlaceOrderViewCell.m in Sources */,
 				90A8C4AB1CACC65100F17677 /* DishInfo.m in Sources */,
 				904177791CB349EA00ED2389 /* SDWebImageDownloader.m in Sources */,
+				907E36001CBDDBF3001AFA5A /* MyOrderModel.m in Sources */,
 				90A8C4C21CACC93600F17677 /* AFURLResponseSerialization.m in Sources */,
 				90A8C4DE1CAE19EC00F17677 /* OrderViewController.m in Sources */,
 				90A8C4C31CACC93600F17677 /* AFURLSessionManager.m in Sources */,

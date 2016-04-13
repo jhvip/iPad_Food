@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="OrderDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22*3元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Knr-mT-Gjv">
+                        <rect key="frame" x="356.5" y="22.5" width="55.5" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="SZc-MV-BVd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzn-ml-tbx">
+                        <rect key="frame" x="710" y="22" width="40" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Dh4-SL-5CY"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="sLa-Tu-Cu8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红烧排骨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhD-zh-QCk">
+                        <rect key="frame" x="20" y="22" width="68" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="Glt-5L-hrj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mzn-ml-tbx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0v2-mu-iCN"/>
+                    <constraint firstItem="Knr-mT-Gjv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1sD-Ta-xfW"/>
+                    <constraint firstItem="Knr-mT-Gjv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HAa-bM-O1Q"/>
+                    <constraint firstItem="WhD-zh-QCk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="Hxf-gn-mqZ"/>
+                    <constraint firstItem="WhD-zh-QCk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UxK-AB-RYb"/>
+                    <constraint firstAttribute="trailing" secondItem="mzn-ml-tbx" secondAttribute="trailing" constant="18" id="ckY-6P-HrW"/>
+                    <constraint firstItem="WhD-zh-QCk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="i7a-eR-Wf2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="WhD-zh-QCk" secondAttribute="bottom" constant="15.5" id="wlG-IP-nnF"/>
+                    <constraint firstItem="WhD-zh-QCk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xbC-vd-yrx"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Hxf-gn-mqZ"/>
+                        <exclude reference="i7a-eR-Wf2"/>
+                        <exclude reference="wlG-IP-nnF"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dishMarklabel" destination="mzn-ml-tbx" id="mgu-E3-a1X"/>
+                <outlet property="dishMoneyLabel" destination="Knr-mT-Gjv" id="um3-aP-9Ns"/>
+                <outlet property="dishName" destination="WhD-zh-QCk" id="ZLU-RL-S1Z"/>
+            </connections>
+            <point key="canvasLocation" x="528" y="218"/>
+        </tableViewCell>
+    </objects>
+</document>
