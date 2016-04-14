@@ -25,6 +25,7 @@
 #define searchOrderURL [NSString stringWithFormat:@"http://%@/DishSearchOrder",ip]
 //查看菜单详情
 #define OrderDetailURL [NSString stringWithFormat:@"http://%@/OrderDetailServlet",ip]
-
+//支付订单
+#define PayMoneyURL [NSString stringWithFormat:@"http://%@/PayOrderMoneyServlet",ip]
 
 #endif /* RequestUrl_h */

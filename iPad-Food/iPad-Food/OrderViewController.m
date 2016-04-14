@@ -43,11 +43,27 @@
     // Do any additional setup after loading the view from its nib.
     
     [self loadTableView];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    NSNotificationCenter *notification= [NSNotificationCenter defaultCenter];
+    [notification addObserver:self
+                     selector:@selector(setTag:)
+                         name:@"tagInfo"
+                       object:nil];
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.deskNumLabel.text=[ud objectForKey:@"deskNum"];
+    [self.orderList removeAllObjects];
+    
+    [self loadInfo];
+    
+    [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     if (self.orderList.count==0) {
         self.tableView.sectionFooterHeight=0;
     }
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -257,21 +273,7 @@
 }
 
 #pragma mark 加载口味设置
--(void)viewWillAppear:(BOOL)animated{
-    NSNotificationCenter *notification= [NSNotificationCenter defaultCenter];
-    [notification addObserver:self
-           selector:@selector(setTag:)
-               name:@"tagInfo"
-             object:nil];
-    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
-    self.deskNumLabel.text=[ud objectForKey:@"deskNum"];
-    [self.orderList removeAllObjects];
-    
-    [self loadInfo];
-    self.tableView.sectionFooterHeight=0;
-    [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    
-}
+
 
 -(void)setTag:(NSNotification*)sender{
     NSDictionary *tagInfo=[sender object];
@@ -279,6 +281,7 @@
     for (NSDictionary *dic in self.orderList) {
         if ([[dic objectForKey:@"id"]isEqualToString:dishNo]) {
             [self.orderList replaceObjectAtIndex:[self.orderList indexOfObject:dic] withObject:tagInfo];
+            [self saveInfo];
             break;
         }
     }
@@ -361,10 +364,8 @@
         [orderView presentInViewController:self];
     }
     
-    
-   
-    
 }
+
 
 
 /*

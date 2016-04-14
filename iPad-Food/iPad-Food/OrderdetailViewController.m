@@ -45,12 +45,7 @@
     self.tableView.dataSource=self;
     self.tableView.rowHeight=60;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderDetailCell" bundle:nil] forCellReuseIdentifier:@"OrderDetailCell"];
-    if (![self.orderInfo.orderServed isEqualToString:@"0"]) {
-        self.payButton.backgroundColor=[UIColor grayColor];
-        self.payButton.userInteractionEnabled=NO;
-        [self.payButton setTitle:@"已支付" forState:UIControlStateNormal];
-    }
-
+    [self payStatus];
 }
 
 
@@ -83,9 +78,20 @@
 }
 - (IBAction)back:(id)sender {
     [self.popupController popViewControllerAnimated:YES];
+   
 }
 
 - (IBAction)payMoney:(id)sender {
+    UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"确定支付" message:[ NSString stringWithFormat:@"总价%@元，是否确认支付？",self.orderInfo.orderMoney] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self payMoney];
+    }];
+    [alert addAction:cacelButton];
+    [alert addAction:makeButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)loadInfo{
@@ -101,6 +107,27 @@
     }];
 }
 
+-(void)payStatus{
+    if (![self.orderInfo.orderServed isEqualToString:@"0"]) {
+        self.payButton.backgroundColor=[UIColor grayColor];
+        self.payButton.userInteractionEnabled=NO;
+        [self.payButton setTitle:@"已支付" forState:UIControlStateNormal];
+    }
+}
+
+-(void)payMoney{
+    NSDictionary *param=@{@"orderNum":self.orderInfo.orderNum,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage POST:PayMoneyURL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"status"]isEqualToString:@"success"]) {
+            self.orderInfo.orderServed=@"1";
+        }
+        [self payStatus];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error");
+    }];
+}
 /*
 #pragma mark - Navigation
 

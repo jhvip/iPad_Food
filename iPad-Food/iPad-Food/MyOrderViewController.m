@@ -37,11 +37,13 @@
     return self;
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self searchOrder];
+    [self.tableView reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self searchOrder];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     self.tableView.rowHeight=80;
@@ -83,6 +85,9 @@
 
 
 -(void)searchOrder{
+    //清楚之前的数据
+    [self.orderInfoList removeAllObjects];
+    
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.myOrderList options:NSJSONWritingPrettyPrinted error:&error];//此处data参数是我上面提到的key为"data"的数组
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
