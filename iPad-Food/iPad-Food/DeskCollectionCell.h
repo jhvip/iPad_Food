@@ -2,7 +2,7 @@
 //  DeskCollectionCell.h
 //  iPad-Food
 //
-//  Created by 蒋豪 on 16/4/8.
+//  Created by 吴鹏先 on 16/4/8.
 //  Copyright © 2016年 wpx. All rights reserved.
 //
 

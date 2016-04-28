@@ -29,6 +29,7 @@
 		904DCCD11CB7410A001E4E30 /* DeskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCCF1CB7410A001E4E30 /* DeskViewController.xib */; };
 		904DCCD51CB74432001E4E30 /* DeskCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */; };
 		904DCCD61CB74432001E4E30 /* DeskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */; };
+		906EB0A91CC7A82D00874AA8 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 906EB0A71CC7A82D00874AA8 /* RestaurantViewController.m */; };
 		907E35F41CBCDE31001AFA5A /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */; };
 		907E35F51CBCDE31001AFA5A /* MyOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */; };
 		907E35FB1CBCE364001AFA5A /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E35F91CBCE364001AFA5A /* MyOrderCell.m */; };
@@ -118,6 +119,8 @@
 		904DCCD21CB74432001E4E30 /* DeskCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeskCollectionCell.h; sourceTree = "<group>"; };
 		904DCCD31CB74432001E4E30 /* DeskCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeskCollectionCell.m; sourceTree = "<group>"; };
 		904DCCD41CB74432001E4E30 /* DeskCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeskCollectionCell.xib; sourceTree = "<group>"; };
+		906EB0A61CC7A82D00874AA8 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
+		906EB0A71CC7A82D00874AA8 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
 		907E35F11CBCDE31001AFA5A /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		907E35F21CBCDE31001AFA5A /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
 		907E35F31CBCDE31001AFA5A /* MyOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderViewController.xib; sourceTree = "<group>"; };
@@ -269,6 +272,15 @@
 			name = "桌号Cell";
 			sourceTree = "<group>";
 		};
+		906EB0A21CC7A78E00874AA8 /* restaurant(官网) */ = {
+			isa = PBXGroup;
+			children = (
+				906EB0A61CC7A82D00874AA8 /* RestaurantViewController.h */,
+				906EB0A71CC7A82D00874AA8 /* RestaurantViewController.m */,
+			);
+			name = "restaurant(官网)";
+			sourceTree = "<group>";
+		};
 		907E35F01CBCD6C2001AFA5A /* 我的订单 */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +353,7 @@
 		90A8C4601CAA269C00F17677 /* iPad-Food */ = {
 			isa = PBXGroup;
 			children = (
+				906EB0A21CC7A78E00874AA8 /* restaurant(官网) */,
 				90A8C47C1CAA277700F17677 /* lib */,
 				90A8C47B1CAA276500F17677 /* other(其他) */,
 				90A8C47A1CAA275600F17677 /* order(购物车) */,
@@ -729,6 +742,7 @@
 				90A8C4C81CAD163700F17677 /* DishDetailViewController.m in Sources */,
 				90AA15D01CB64426005C7BB4 /* PlaceOrderViewCell.m in Sources */,
 				90A8C4AB1CACC65100F17677 /* DishInfo.m in Sources */,
+				906EB0A91CC7A82D00874AA8 /* RestaurantViewController.m in Sources */,
 				904177791CB349EA00ED2389 /* SDWebImageDownloader.m in Sources */,
 				907E36001CBDDBF3001AFA5A /* MyOrderModel.m in Sources */,
 				90A8C4C21CACC93600F17677 /* AFURLResponseSerialization.m in Sources */,
