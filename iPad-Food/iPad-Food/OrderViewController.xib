@@ -78,13 +78,13 @@
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q41-Ne-SnL">
-                    <rect key="frame" x="575" y="98" width="108" height="50"/>
-                    <color key="backgroundColor" red="1" green="0.39062568110000001" blue="0.41905228709999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="551.5" y="98" width="72" height="50"/>
+                    <color key="backgroundColor" red="0.63529411759999999" green="0.066666666669999999" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="C9r-On-mR6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                    <state key="normal" title="清空菜单" backgroundImage="deleteComm">
+                    <state key="normal" title="清空菜单">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -127,6 +127,9 @@
                                     <state key="normal" title="退单">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="8cp-xf-sl6"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgh-lJ-PWM">
                                     <rect key="frame" x="10" y="104" width="159.5" height="49"/>
@@ -284,6 +287,17 @@
                         <constraint firstItem="mcy-Px-E8p" firstAttribute="top" secondItem="aSY-8h-myr" secondAttribute="bottom" constant="10" id="vSK-Za-PN0"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-tI-huC">
+                    <rect key="frame" x="637" y="98" width="72" height="50"/>
+                    <color key="backgroundColor" red="0.63529411764705879" green="0.066666666666666666" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <state key="normal" title="清空订单">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cleanOrder:" destination="-1" eventType="touchUpInside" id="ugm-La-AOy"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -292,12 +306,17 @@
                 <constraint firstAttribute="trailing" secondItem="7CI-q9-H1D" secondAttribute="trailing" id="2Bs-qY-ixM"/>
                 <constraint firstItem="q41-Ne-SnL" firstAttribute="top" secondItem="7CI-q9-H1D" secondAttribute="bottom" constant="10" id="8UR-Qo-AcC"/>
                 <constraint firstAttribute="bottom" secondItem="bXo-Us-Jub" secondAttribute="bottom" id="9Y7-pf-yHG"/>
+                <constraint firstItem="bKA-tI-huC" firstAttribute="height" secondItem="q41-Ne-SnL" secondAttribute="height" id="AAe-pV-AP2"/>
                 <constraint firstItem="7CI-q9-H1D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Bkr-Yj-A6N"/>
                 <constraint firstItem="gpF-Fk-VEP" firstAttribute="top" secondItem="7CI-q9-H1D" secondAttribute="bottom" constant="8" id="GnZ-3V-zrv"/>
+                <constraint firstItem="bKA-tI-huC" firstAttribute="centerY" secondItem="q41-Ne-SnL" secondAttribute="centerY" id="MFv-89-PfK"/>
                 <constraint firstItem="bXo-Us-Jub" firstAttribute="top" secondItem="q41-Ne-SnL" secondAttribute="bottom" constant="10" id="RNC-OU-f6v"/>
+                <constraint firstItem="q41-Ne-SnL" firstAttribute="leading" secondItem="gpF-Fk-VEP" secondAttribute="trailing" constant="20" id="XF4-Ur-YLy"/>
                 <constraint firstItem="7CI-q9-H1D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zgs-c4-uzs"/>
-                <constraint firstItem="q41-Ne-SnL" firstAttribute="width" secondItem="bXo-Us-Jub" secondAttribute="width" multiplier="0.6" id="bf9-fa-Egv"/>
+                <constraint firstItem="q41-Ne-SnL" firstAttribute="width" secondItem="bXo-Us-Jub" secondAttribute="width" multiplier="0.4" id="bf9-fa-Egv"/>
+                <constraint firstItem="bKA-tI-huC" firstAttribute="width" secondItem="q41-Ne-SnL" secondAttribute="width" id="hRP-qV-Hj5"/>
                 <constraint firstAttribute="trailing" secondItem="bXo-Us-Jub" secondAttribute="trailing" id="hmO-PU-r1k"/>
+                <constraint firstAttribute="trailing" secondItem="bKA-tI-huC" secondAttribute="trailing" constant="10" id="kRC-x2-to7"/>
                 <constraint firstAttribute="bottom" secondItem="gpF-Fk-VEP" secondAttribute="bottom" constant="8" id="qb9-db-oCM"/>
                 <constraint firstItem="gpF-Fk-VEP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="vpp-NO-wKX"/>
                 <constraint firstItem="q41-Ne-SnL" firstAttribute="centerX" secondItem="bXo-Us-Jub" secondAttribute="centerX" id="x4i-T5-fLH"/>
@@ -307,6 +326,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="x4i-T5-fLH"/>
                     <exclude reference="1Co-ZN-Yv4"/>
                 </mask>
             </variation>
@@ -314,7 +334,6 @@
         </view>
     </objects>
     <resources>
-        <image name="deleteComm" width="146" height="30"/>
         <image name="navBar_bg" width="1024" height="71"/>
         <image name="photoDefault" width="260" height="214"/>
     </resources>

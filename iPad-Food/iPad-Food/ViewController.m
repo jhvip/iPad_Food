@@ -37,11 +37,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+     [self showTableView:self.firstButton];
     [self loadTableView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self showTableView:self.firstButton];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +83,11 @@
     self.tableView.rowHeight=200;
     UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg"]];
     self.tableView.backgroundView=image;
+    self.orderNum.backgroundColor=[UIColor redColor];
+    self.orderNum.layer.masksToBounds = YES;
+    self.orderNum.layer.cornerRadius = self.orderNum.frame.size.width/2;
+    
+    
 }
 
 #pragma mark 实现TableView代理方法

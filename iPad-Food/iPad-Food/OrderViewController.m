@@ -15,6 +15,7 @@
 #import "PlaceOrderViewController.h"
 #import "DeskViewController.h"
 #import "MyOrderViewController.h"
+#import "MyOrderModel.h"
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate,orderViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *orderList;
@@ -26,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *dishImage;
 @property (weak, nonatomic) IBOutlet UILabel *deskNumLabel;
 
+@property (nonatomic,strong)NSMutableArray *historyOrder;
+
 @end
 
 @implementation OrderViewController
@@ -36,6 +39,12 @@
     }
     return _orderList;
 
+}
+-(NSMutableArray *)historyOrder{
+    if (_historyOrder==nil) {
+        _historyOrder=[NSMutableArray array];
+    }
+    return _historyOrder;
 }
 
 - (void)viewDidLoad {
@@ -61,6 +70,7 @@
     if (self.orderList.count==0) {
         self.tableView.sectionFooterHeight=0;
     }
+    [self loadHistoryOrder];
     
 }
 
@@ -205,7 +215,6 @@
     
 }
 
-
 -(NSString*)sumMoney{
     NSInteger sum=0;
     for (NSDictionary *dict in self.orderList) {
@@ -291,6 +300,7 @@
 
 #pragma mark 下订单
 - (IBAction)placeOrder:(UIButton *)sender {
+    
     if (self.deskNumLabel.text==nil) {
         UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"下单失败" message:@"您还没有选择桌号" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -366,7 +376,135 @@
     
 }
 
+#pragma mark 退单
+- (IBAction)cancel:(id)sender {
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSArray *orderList=[ud objectForKey:@"orderList"];
+    
+    
+    
+    if (orderList.count==0) {
+        UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"退单失败" message:@"您的当前菜单为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:cacelButton];
+        [alert addAction:makeButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        BOOL status=NO;
+        int i=0;
+        for (MyOrderModel *model in self.historyOrder) {
+            if ([model.orderServed isEqualToString:@"0"]) {
+                status=YES;
+                break;
+            }
+            i++;
+        }
+        if (!status) {
+            UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"退单失败" message:@"你没有未支付的订单" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            
+            UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"去点菜" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:cacelButton];
+            [alert addAction:makeButton];
+            
+            [self presentViewController:alert animated:YES completion:nil];
 
+        }else{
+            UIAlertController *alert =[UIAlertController alertControllerWithTitle:nil message:@"是否确认退单！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            
+            UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [self.historyOrder removeObjectAtIndex:i];
+                NSMutableArray *temp=[NSMutableArray array];
+                for (MyOrderModel *model in self.historyOrder) {
+                    [temp addObject:model.orderNum];
+                }
+                [ud setObject:temp forKey:@"orderList"];
+                
+                [NSThread sleepForTimeInterval:1];
+                UIAlertController *alert1=[UIAlertController alertControllerWithTitle:nil message:@"退单成功！" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cacelButton1=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                [alert1 addAction:cacelButton1];
+                [self presentViewController:alert1 animated:YES completion:nil];
+                
+            }];
+            [alert addAction:cacelButton];
+            [alert addAction:makeButton];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+
+        
+        }
+        
+    }
+    
+    
+}
+
+
+-(void)loadHistoryOrder{
+    
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSArray *temp=[ud objectForKey:@"orderList"];
+    NSMutableArray *orderList=[NSMutableArray arrayWithArray:temp];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:orderList options:NSJSONWritingPrettyPrinted error:&error];//此处data参数是我上面提到的key为"data"的数组
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *param=@{@"orderList":jsonString,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage POST:searchOrderURL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *list=responseObject;
+        [self.historyOrder removeAllObjects];
+        for (NSDictionary *dic in list) {
+            MyOrderModel *orderInfo=[[MyOrderModel alloc]init];
+            orderInfo.orderMoney=[dic objectForKey:@"menu_money"];
+            orderInfo.orderNum=[dic objectForKey:@"menu_num"];
+            orderInfo.orderServed=[dic objectForKey:@"served"];
+            orderInfo.orderTime=[dic objectForKey:@"menutime"];
+            [self.historyOrder addObject:orderInfo];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error");
+    }];
+    
+
+
+}
+
+- (IBAction)cleanOrder:(id)sender {
+    UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"清除订单" message:@"是否确认清除所有订单！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cacelButton=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *makeButton=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+        NSMutableArray *temp=[NSMutableArray array];
+        [ud setObject:temp forKey:@"orderList"];
+        
+        [NSThread sleepForTimeInterval:1];
+        UIAlertController *alert1=[UIAlertController alertControllerWithTitle:nil message:@"清除成功！" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cacelButton1=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alert1 addAction:cacelButton1];
+        [self presentViewController:alert1 animated:YES completion:nil];
+        
+    }];
+    [alert addAction:cacelButton];
+    [alert addAction:makeButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
 
 /*
 #pragma mark - Navigation
