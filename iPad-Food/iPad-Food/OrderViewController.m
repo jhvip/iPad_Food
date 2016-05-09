@@ -71,6 +71,7 @@
         self.tableView.sectionFooterHeight=0;
     }
     [self loadHistoryOrder];
+    self.acountMoneyLabel.text=[self sumMoney];
     
 }
 
@@ -92,7 +93,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"orderViewCell" bundle:nil] forCellReuseIdentifier:@"orderView"];
     self.tableView.rowHeight=80;
     
-    self.acountMoneyLabel.text=[self sumMoney];
     //设置section行高
     self.tableView.sectionHeaderHeight=60;
     self.tableView.sectionFooterHeight=80;
