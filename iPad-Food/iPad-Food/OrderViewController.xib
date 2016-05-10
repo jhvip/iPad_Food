@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -83,7 +83,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="C9r-On-mR6"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="清空菜单">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -94,13 +94,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-Us-Jub">
                     <rect key="frame" x="539" y="158" width="179.5" height="549"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-Px-E8p">
+                            <rect key="frame" x="18" y="60.5" width="143.5" height="143.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="mcy-Px-E8p" secondAttribute="height" multiplier="1:1" id="wyr-wf-OQX"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="photoDefault"/>
+                            <connections>
+                                <action selector="showDetail:" destination="-1" eventType="touchUpInside" id="wd5-sK-Tp4"/>
+                            </connections>
+                        </button>
                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-N1-o9p">
                             <rect key="frame" x="0.0" y="282" width="179.5" height="266.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyn-yb-UDr">
                                     <rect key="frame" x="10" y="183" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <state key="normal" title="返回点餐">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -111,7 +121,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHj-mz-v0e">
                                     <rect key="frame" x="10" y="-133" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <state key="normal" title="餐桌变更">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -122,7 +132,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJF-Ps-vt3">
                                     <rect key="frame" x="10" y="25" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="退单">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,7 +144,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgh-lJ-PWM">
                                     <rect key="frame" x="10" y="104" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <state key="normal" title="我的订单">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -145,7 +155,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-jc-wVQ">
                                     <rect key="frame" x="10" y="-54" width="159.5" height="49"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <state key="normal" title="下单">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -164,16 +174,16 @@
                                 <constraint firstItem="NJF-Ps-vt3" firstAttribute="top" secondItem="UHj-mz-v0e" secondAttribute="bottom" constant="30" id="Mgw-YM-1E3"/>
                                 <constraint firstAttribute="trailing" secondItem="pyn-yb-UDr" secondAttribute="trailing" constant="10" id="PKW-iP-gBB"/>
                                 <constraint firstItem="FVy-jc-wVQ" firstAttribute="width" secondItem="UHj-mz-v0e" secondAttribute="width" id="Pqx-NN-G2N"/>
-                                <constraint firstItem="NJF-Ps-vt3" firstAttribute="top" secondItem="FVy-jc-wVQ" secondAttribute="bottom" constant="30" id="WXm-Ka-KiK"/>
+                                <constraint firstItem="NJF-Ps-vt3" firstAttribute="top" secondItem="FVy-jc-wVQ" secondAttribute="bottom" constant="15" id="WXm-Ka-KiK"/>
                                 <constraint firstItem="pyn-yb-UDr" firstAttribute="height" secondItem="UHj-mz-v0e" secondAttribute="height" id="WeH-Or-mbY"/>
-                                <constraint firstItem="pyn-yb-UDr" firstAttribute="top" secondItem="rgh-lJ-PWM" secondAttribute="bottom" constant="30" id="YtC-Nc-wCO"/>
+                                <constraint firstItem="pyn-yb-UDr" firstAttribute="top" secondItem="rgh-lJ-PWM" secondAttribute="bottom" constant="15" id="YtC-Nc-wCO"/>
                                 <constraint firstItem="NJF-Ps-vt3" firstAttribute="height" secondItem="UHj-mz-v0e" secondAttribute="height" id="Z1J-mj-boN"/>
-                                <constraint firstItem="FVy-jc-wVQ" firstAttribute="top" secondItem="UHj-mz-v0e" secondAttribute="bottom" constant="30" id="dzt-Qs-eNK"/>
+                                <constraint firstItem="FVy-jc-wVQ" firstAttribute="top" secondItem="UHj-mz-v0e" secondAttribute="bottom" constant="15" id="dzt-Qs-eNK"/>
                                 <constraint firstItem="rgh-lJ-PWM" firstAttribute="height" secondItem="UHj-mz-v0e" secondAttribute="height" id="f1x-iv-7kt"/>
                                 <constraint firstItem="NJF-Ps-vt3" firstAttribute="centerX" secondItem="UHj-mz-v0e" secondAttribute="centerX" id="php-dm-Vb6"/>
                                 <constraint firstItem="FVy-jc-wVQ" firstAttribute="centerX" secondItem="UHj-mz-v0e" secondAttribute="centerX" id="pwp-np-lL8"/>
                                 <constraint firstItem="rgh-lJ-PWM" firstAttribute="width" secondItem="UHj-mz-v0e" secondAttribute="width" id="pzH-np-SxA"/>
-                                <constraint firstItem="rgh-lJ-PWM" firstAttribute="top" secondItem="NJF-Ps-vt3" secondAttribute="bottom" constant="30" id="qdj-3d-B5M"/>
+                                <constraint firstItem="rgh-lJ-PWM" firstAttribute="top" secondItem="NJF-Ps-vt3" secondAttribute="bottom" constant="15" id="qdj-3d-B5M"/>
                                 <constraint firstItem="FVy-jc-wVQ" firstAttribute="height" secondItem="UHj-mz-v0e" secondAttribute="height" id="r1b-3A-tGL"/>
                                 <constraint firstItem="pyn-yb-UDr" firstAttribute="leading" secondItem="AIy-N1-o9p" secondAttribute="leading" constant="10" id="xSy-lW-Qio"/>
                             </constraints>
@@ -233,7 +243,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqK-yN-WyI">
-                                    <rect key="frame" x="135" y="4" width="50" height="30"/>
+                                    <rect key="frame" x="130" y="4" width="50" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Sv4-Af-aJL"/>
                                     </constraints>
@@ -242,7 +252,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-Nf-2OV">
-                                    <rect key="frame" x="190" y="4" width="25" height="30"/>
+                                    <rect key="frame" x="185" y="4" width="25" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -252,23 +262,13 @@
                             <constraints>
                                 <constraint firstItem="eqK-yN-WyI" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="P8p-hz-Eyw"/>
                                 <constraint firstItem="Jyf-Cs-TX7" firstAttribute="leading" secondItem="2iN-Wh-e8P" secondAttribute="leading" constant="50" id="RAe-5d-hMj"/>
-                                <constraint firstItem="eqK-yN-WyI" firstAttribute="leading" secondItem="Jyf-Cs-TX7" secondAttribute="trailing" constant="10" id="gzj-Cj-Bnu"/>
+                                <constraint firstItem="eqK-yN-WyI" firstAttribute="leading" secondItem="Jyf-Cs-TX7" secondAttribute="trailing" constant="5" id="gzj-Cj-Bnu"/>
                                 <constraint firstAttribute="height" constant="38" id="jpE-zG-h9t"/>
                                 <constraint firstItem="M9a-Nf-2OV" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="obU-Me-IPm"/>
                                 <constraint firstItem="Jyf-Cs-TX7" firstAttribute="centerY" secondItem="2iN-Wh-e8P" secondAttribute="centerY" id="q5Y-uh-zjW"/>
                                 <constraint firstItem="M9a-Nf-2OV" firstAttribute="leading" secondItem="eqK-yN-WyI" secondAttribute="trailing" constant="5" id="vHb-vw-FrL"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-Px-E8p">
-                            <rect key="frame" x="20" y="55" width="139.5" height="139.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="mcy-Px-E8p" secondAttribute="height" multiplier="1:1" id="wyr-wf-OQX"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="photoDefault"/>
-                            <connections>
-                                <action selector="showDetail:" destination="-1" eventType="touchUpInside" id="wd5-sK-Tp4"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.93802547454833984" green="0.92482113838195801" blue="0.91526740789413452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -276,21 +276,21 @@
                         <constraint firstItem="AIy-N1-o9p" firstAttribute="leading" secondItem="bXo-Us-Jub" secondAttribute="leading" id="2gp-nQ-oMb"/>
                         <constraint firstItem="AIy-N1-o9p" firstAttribute="top" secondItem="2iN-Wh-e8P" secondAttribute="bottom" id="4AR-zJ-oM1"/>
                         <constraint firstAttribute="trailing" secondItem="AIy-N1-o9p" secondAttribute="trailing" id="AmY-3k-Qe7"/>
-                        <constraint firstAttribute="trailing" secondItem="mcy-Px-E8p" secondAttribute="trailing" constant="20" id="BVr-34-LT8"/>
+                        <constraint firstAttribute="trailing" secondItem="mcy-Px-E8p" secondAttribute="trailing" constant="18" id="BVr-34-LT8"/>
                         <constraint firstAttribute="trailing" secondItem="aSY-8h-myr" secondAttribute="trailing" id="DRJ-oW-9g6"/>
                         <constraint firstAttribute="trailing" secondItem="2iN-Wh-e8P" secondAttribute="trailing" id="GIO-d8-ZUS"/>
                         <constraint firstItem="aSY-8h-myr" firstAttribute="leading" secondItem="bXo-Us-Jub" secondAttribute="leading" id="OlZ-Zv-CHU"/>
-                        <constraint firstItem="mcy-Px-E8p" firstAttribute="leading" secondItem="bXo-Us-Jub" secondAttribute="leading" constant="20" id="PdQ-Dc-9my"/>
+                        <constraint firstItem="mcy-Px-E8p" firstAttribute="leading" secondItem="bXo-Us-Jub" secondAttribute="leading" constant="18" id="PdQ-Dc-9my"/>
                         <constraint firstAttribute="bottom" secondItem="AIy-N1-o9p" secondAttribute="bottom" id="dQl-PC-aXX"/>
                         <constraint firstItem="aSY-8h-myr" firstAttribute="top" secondItem="bXo-Us-Jub" secondAttribute="top" id="gID-lh-kRv"/>
                         <constraint firstItem="2iN-Wh-e8P" firstAttribute="leading" secondItem="bXo-Us-Jub" secondAttribute="leading" id="rSs-O8-G9w"/>
-                        <constraint firstItem="mcy-Px-E8p" firstAttribute="top" secondItem="aSY-8h-myr" secondAttribute="bottom" constant="10" id="vSK-Za-PN0"/>
+                        <constraint firstItem="mcy-Px-E8p" firstAttribute="top" secondItem="aSY-8h-myr" secondAttribute="bottom" constant="15" id="vSK-Za-PN0"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-tI-huC">
                     <rect key="frame" x="637" y="98" width="72" height="50"/>
                     <color key="backgroundColor" red="0.63529411764705879" green="0.066666666666666666" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="清空订单">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
