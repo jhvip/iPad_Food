@@ -18,6 +18,7 @@
 
 @implementation DishDetailViewController
 
+//初始化界面
 - (instancetype)init
 {
     if (self = [super init]) {
@@ -37,7 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//预加载 网络数据请求
 -(void)viewWillAppear:(BOOL)animated{
 
     NSDictionary *param=@{@"dish_no":self.dishNo,

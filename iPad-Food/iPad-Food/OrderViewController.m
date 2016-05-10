@@ -33,6 +33,7 @@
 
 @implementation OrderViewController
 
+#pragma mark 懒加载
 -(NSMutableArray *)orderList{
     if (_orderList==nil) {
         _orderList=[NSMutableArray array];
@@ -54,6 +55,7 @@
     [self loadTableView];
     
 }
+#pragma mark 口味设置信息
 -(void)viewWillAppear:(BOOL)animated{
     NSNotificationCenter *notification= [NSNotificationCenter defaultCenter];
     [notification addObserver:self
@@ -80,6 +82,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark 返回首页
 - (IBAction)backIndex:(id)sender {
     [self saveInfo];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -103,15 +106,19 @@
 
 
 #pragma mark 实现TableView代理方法
+//返回tableView行高
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 60;
 }
+//返回tableView列数
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+//返回tableView的行数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.orderList.count;
 }
+//返回tableView的Cell
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     orderViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"orderView" forIndexPath:indexPath];
@@ -156,7 +163,8 @@
     
     
 }
-
+#pragma Mark 代理方法
+//改变菜品数量
 -(void)orderViewChangeInfo:(NSString *)dishNo withNum:(NSString *)num{
     for (NSDictionary *dict in self.orderList) {
         NSString *dish_no=[dict objectForKey:@"id"];
@@ -170,7 +178,7 @@
     self.acountMoneyLabel.text=[self sumMoney];
     
 }
-
+//菜品口味设置
 -(void)orderViewMakeTag:(NSDictionary *)dishInfo{
     MakeTagView *view=[[MakeTagView alloc]init];
     view.dishInfo=dishInfo;

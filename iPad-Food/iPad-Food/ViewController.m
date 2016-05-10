@@ -49,6 +49,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark 加载菜单列表
 - (IBAction)showTableView:(UIButton *)sender {
     
     NSDictionary *param=@{
@@ -65,6 +66,7 @@
     [self changeButtonStatus:sender];
 }
 
+
 -(void)changeButtonStatus:(UIButton*)sender{
     for (UIButton *button in self.buttonListView.subviews) {
         button.selected=NO;
@@ -76,6 +78,7 @@
 
 #pragma mark 加载tableView
 -(void)loadTableView{
+    //tableView初始化
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"DishViewCell" bundle:nil] forCellReuseIdentifier:@"dishView"];
@@ -121,6 +124,7 @@
 
 #pragma mark cell的代理方法
 -(void)dishViewCellReloadOrder:(NSArray *)orderList{
+    //重新加载购物车列表
     NSInteger num=0;
     for (NSDictionary *dict in orderList) {
         NSString *numString=[dict objectForKey:@"manynum"];
@@ -132,6 +136,7 @@
 
 }
 -(void)dishViewCellShowDetail:(NSString *)dishNO{
+    //cell的代理方法  显示菜单详情
     DishDetailViewController *view=[[DishDetailViewController alloc]init];
     view.dishNo=dishNO;
     STPopupController *detailView=[[STPopupController alloc]initWithRootViewController:view];
@@ -144,7 +149,7 @@
 #pragma mark 跳转购物车
 
 - (IBAction)showOrderView {
-    
+    //加载购物车页面
     OrderViewController * view = [[OrderViewController alloc]init];
 
     [self presentViewController:view animated:YES completion:nil];
